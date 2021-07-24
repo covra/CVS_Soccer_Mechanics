@@ -112,6 +112,7 @@ Assets {
           }
         }
         ParentId: 16401043384679813958
+        ChildIds: 12900612877445824622
         ChildIds: 8203898171945882562
         ChildIds: 1625075445606608531
         WantsNetworking: true
@@ -132,13 +133,129 @@ Assets {
         }
       }
       Objects {
+        Id: 12900612877445824622
+        Name: "ClientContext"
+        Transform {
+          Location {
+            X: -10
+            Y: -1.7689966
+            Z: -3.65850687
+          }
+          Rotation {
+            Pitch: -5.56477356
+            Yaw: 179.69931
+            Roll: -2.77498555
+          }
+          Scale {
+            X: 0.704139769
+            Y: 0.704139769
+            Z: 0.704139769
+          }
+        }
+        ParentId: 18392585474569060532
+        ChildIds: 11647636081282623444
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+        }
+      }
+      Objects {
+        Id: 11647636081282623444
+        Name: "ref"
+        Transform {
+          Location {
+            X: -1.55543657e-05
+            Y: -1.78875234e-05
+            Z: -104.383591
+          }
+          Rotation {
+            Pitch: 6.83018879e-06
+            Yaw: 1.08856129e-05
+            Roll: 1.28066097e-06
+          }
+          Scale {
+            X: 0.209644631
+            Y: 0.209644601
+            Z: 1.59236765
+          }
+        }
+        ParentId: 12900612877445824622
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Corner Rounding"
+            Float: 1
+          }
+          Overrides {
+            Name: "bp:Stroke Color"
+            Color {
+              R: 0.747880697
+              G: 1
+              B: 0.19
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Stroke Width"
+            Float: 0.563968301
+          }
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 1.35751724
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 7737714291451662344
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+      }
+      Objects {
         Id: 8203898171945882562
         Name: "shape"
         Transform {
           Location {
-            X: -7.26467276
-            Y: -1.76933622
-            Z: -3.65851831
+            X: -10.0000019
+            Y: -1.769
+            Z: -3.65852857
           }
           Rotation {
           }
@@ -342,6 +459,15 @@ Assets {
             Value: "mc:etriggershape:capsule"
           }
         }
+      }
+    }
+    Assets {
+      Id: 7737714291451662344
+      Name: "2D Basic Shapes Decal"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "dcl_basicShapes"
       }
     }
     Assets {

@@ -1,13 +1,4 @@
 Assets {
-  Id: 17197364748079741770
-  Name: "Arch"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_arch_001"
-  }
-}
-Assets {
   Id: 16910278292812118833
   Name: "Sun Light"
   PlatformAssetType: 6
@@ -62,15 +53,6 @@ Assets {
   }
 }
 Assets {
-  Id: 10347500372684654618
-  Name: "Basic Hologram"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "fxmi_basic_hologram"
-  }
-}
-Assets {
   Id: 9963007650780303032
   Name: "Basic Material"
   PlatformAssetType: 2
@@ -86,15 +68,6 @@ Assets {
   PrimaryAsset {
     AssetType: "MaterialAssetRef"
     AssetId: "mi_grass_001_uv"
-  }
-}
-Assets {
-  Id: 8321812525784984801
-  Name: "Crescent - 02"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_crescent_002"
   }
 }
 Assets {
@@ -149,14 +122,5 @@ Assets {
   PrimaryAsset {
     AssetType: "SkinnedMeshAssetRef"
     AssetId: "npc_human_guy_head_military_001_ref"
-  }
-}
-Assets {
-  Id: 808408539445127481
-  Name: "Ring - Quarter"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_quarter_torus_002"
   }
 }
