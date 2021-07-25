@@ -7,6 +7,7 @@ function OnBeginOverlap(whichTrigger, other)
 	if other:IsA("CoreObject") and other.name == "CVS soccer ball" then
 		SHAPE_CONTROL.collision = Collision.FORCE_ON
 		SHAPE_CONTROL.visibility = Visibility.FORCE_ON 
+		_G.ownerBall = SOCCER_CONTROL_EQ.owner
 	end
 end 
 
@@ -14,6 +15,7 @@ function OnEndOverlap(whichTrigger, other)
 	if other:IsA("CoreObject") and other.name == "CVS soccer ball" then
 		SHAPE_CONTROL.collision = Collision.FORCE_OFF
 		SHAPE_CONTROL.visibility = Visibility.FORCE_OFF 
+		_G.ownerBall = nil
 	end
 end
 

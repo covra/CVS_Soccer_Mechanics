@@ -17,6 +17,7 @@ Assets {
         }
         ParentId: 4781671109827199097
         ChildIds: 17216924272719951893
+        ChildIds: 7718894334649025434
         ChildIds: 18392585474569060532
         UnregisteredParameters {
         }
@@ -88,6 +89,40 @@ Assets {
         Script {
           ScriptAsset {
             Id: 15386632311945564786
+          }
+        }
+      }
+      Objects {
+        Id: 7718894334649025434
+        Name: "CVS shoot ball"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16401043384679813958
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 8368083611820705490
           }
         }
       }

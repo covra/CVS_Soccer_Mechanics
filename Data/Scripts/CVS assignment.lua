@@ -20,6 +20,6 @@ function OnPlayerLeft(player)
 	print(">>> MAIN > player left: " .. player.name)
 end
 
-
+_G.ownerBall = nil
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
 Game.playerLeftEvent:Connect(OnPlayerLeft)
