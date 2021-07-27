@@ -143,7 +143,7 @@ Objects {
   Transform {
     Location {
       X: -51.1031494
-      Y: -64.2269897
+      Y: -585.494385
       Z: 117.990509
     }
     Rotation {
@@ -353,7 +353,12 @@ Objects {
           Vector {
             X: -140
             Y: -90
-            Z: 60
+            Z: 222.22438
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
           }
         }
       }

@@ -7,7 +7,7 @@ Assets {
       RootId: 71933976809444979
       Objects {
         Id: 71933976809444979
-        Name: "soccer ball"
+        Name: "CVS soccer ball"
         Transform {
           Scale {
             X: 1
@@ -35,9 +35,10 @@ Assets {
             Value: "mc:ephysicsshape:sphere"
           }
           Settings {
-            Mass: 100
-            LinearDamping: 2.27693272
-            AngularDamping: 1.04378116
+            OverrideMass: true
+            Mass: 20
+            LinearDamping: 1.5
+            AngularDamping: 1
           }
           Radius: 23
         }

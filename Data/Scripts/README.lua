@@ -14,7 +14,9 @@ The cones
 	- The cones have been added under client context to give them a bit of physics,
 	so the debris parameters have been modified 
 
-
+Scripts
+-------
+CVS triggBounds: destroys soccer balls when ball go out field bounds
 
 
 
