@@ -11,7 +11,7 @@ function OnPlayerJoined(player)
 	print(">>> MAIN > player joined: " .. player.name)
 	if AUTO_START then 
 		local eq = World.SpawnAsset(EQ_CONTROL)
-		Task.Wait(0.1)
+		Task.Wait(1)
 		eq:Equip(player)
 		print(script.name.." >> "..eq.name.." to "..player.name)
 	end 

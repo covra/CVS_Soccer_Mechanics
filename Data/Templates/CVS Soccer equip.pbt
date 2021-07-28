@@ -16,17 +16,19 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
+        ChildIds: 10041703835105011597
+        ChildIds: 4371732110621813514
         ChildIds: 17216924272719951893
         ChildIds: 7718894334649025434
         ChildIds: 18392585474569060532
         UnregisteredParameters {
           Overrides {
             Name: "cs:baseForceShoot"
-            Float: 2500
+            Float: 5000
           }
           Overrides {
             Name: "cs:defaultZAngle"
-            Float: 30
+            Float: 40
           }
           Overrides {
             Name: "cs:autoAddBall"
@@ -45,12 +47,32 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:debugPrint"
+            Bool: false
+          }
+          Overrides {
             Name: "cs:defaultZAngle:tooltip"
-            String: "Output angle when kick the soccer ball. Default = 30 degrees"
+            String: "This is the offset for  Z output angle when kick the soccer ball. It is added to the aim when ability is activated. Default = 40"
           }
           Overrides {
             Name: "cs:baseForceShoot:tooltip"
-            String: "Max force when kicking the soccer ball"
+            String: "Max force when kicking the soccer ball. Default = 5000"
+          }
+          Overrides {
+            Name: "cs:debugPrint:tooltip"
+            String: "If enabled, extra information will be displayed in the log. Default = false"
+          }
+          Overrides {
+            Name: "cs:soccerBall:tooltip"
+            String: "This is the \'physics sphere\' acting as a soccer ball"
+          }
+          Overrides {
+            Name: "cs:autoAddBall:tooltip"
+            String: "If enabled, players will be able to add a soccer ball at their feet. By default is \'N\' key. This can be modified in the \'CVS shoot ball\' script. Default= enabled"
+          }
+          Overrides {
+            Name: "cs:ndb_Trigg:tooltip"
+            String: "Internal reference for the \'Near detecting ball\' trigger. This is necessary to know if \'physics ball\' is on the player\'s feet (ownership)"
           }
         }
         WantsNetworking: true
@@ -70,6 +92,158 @@ Assets {
           SocketName: "root"
           PickupTrigger {
             SelfId: 841534158063459245
+          }
+        }
+      }
+      Objects {
+        Id: 10041703835105011597
+        Name: "Kick"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16401043384679813958
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Ability {
+          IsEnabled: true
+          CastPhaseSettings {
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          ExecutePhaseSettings {
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          RecoveryPhaseSettings {
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          CooldownPhaseSettings {
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          Animation: "1hand_melee_slash_left"
+          KeyBinding_v2 {
+            Value: "mc:egameaction:invalid"
+          }
+        }
+      }
+      Objects {
+        Id: 4371732110621813514
+        Name: "Pass"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16401043384679813958
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Ability {
+          IsEnabled: true
+          CastPhaseSettings {
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          ExecutePhaseSettings {
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:aim"
+            }
+          }
+          RecoveryPhaseSettings {
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          CooldownPhaseSettings {
+            CanMove: true
+            CanJump: true
+            CanRotate: true
+            PreventOtherAbilities: true
+            IsTargetDataUpdated: true
+            Facing_V2 {
+              Value: "mc:eabilitysetfacing:none"
+            }
+          }
+          Animation: "1hand_pistol_whip"
+          KeyBinding_v2 {
+            Value: "mc:egameaction:invalid"
           }
         }
       }
@@ -507,6 +681,20 @@ Assets {
           }
         }
         ParentId: 12900612877445824622
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Kick_Ab"
+            ObjectReference {
+              SubObjectId: 10041703835105011597
+            }
+          }
+          Overrides {
+            Name: "cs:Pass_Ab"
+            ObjectReference {
+              SubObjectId: 4371732110621813514
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }

@@ -6,8 +6,11 @@ end
 local NDB_TRIGGER = SOCCER_CONTROL_EQ:GetCustomProperty("ndb_Trigg"):WaitForObject()
 local OWN_SHAPE = script:GetCustomProperty("shape"):WaitForObject()
 --user exposed
+local debugPrint =  SOCCER_CONTROL_EQ:GetCustomProperty("debugPrint")
 local IS_AUTO_BALL = SOCCER_CONTROL_EQ:GetCustomProperty("autoAddBall")
-print(script.name.." >> AUTO ADD BALL is enabled? : ", IS_AUTO_BALL)
+if debugPrint then 
+	print(script.name.." >> AUTO ADD BALL is enabled? : ", IS_AUTO_BALL)
+end 
 local BASE_FORCE = SOCCER_CONTROL_EQ:GetCustomProperty("baseForceShoot")
 local DEFAULT_Z_ANGLE = SOCCER_CONTROL_EQ:GetCustomProperty("defaultZAngle")
 if DEFAULT_Z_ANGLE > 45 then
@@ -33,42 +36,31 @@ end
 
 function OnBindingPressed(player, binding)
 	if binding == KEY_AUTO_BALL and IS_AUTO_BALL then
-		print(script.name.." >> adding new ball")
+		if debugPrint then print(script.name.." >> adding new ball") end 
 		local soccer_ball = World.SpawnAsset(SOCCER_BALL,{position = NDB_TRIGGER:GetWorldPosition()})		
 		BALL = soccer_ball
 	end
 end
---[[
-function OnBindingReleased(player, binding)
-	if (binding == KEY_SHOOT_BALL) and player == SOCCER_CONTROL_EQ.owner then 
-	end
-end
-]]--
 
-function onKickPower (player,powerKick, viewRot)
+function onKickPower (player,isKick, data_1, data_2)
 	if player == SOCCER_CONTROL_EQ.owner then 
 		if _G.ownerBall == player then 	
 			OWN_SHAPE.collision = Collision.FORCE_OFF
 			OWN_SHAPE.visibility = Visibility.FORCE_OFF 
-			local localPower  = BASE_FORCE * powerKick
-				local selfTransform = player:GetWorldTransform()
-				local forw = selfTransform:GetForwardVector() + offsetRIGHT		
-				--local shootVector = (forw + Z_VECTOR)* localPower
-				local viewAngle = Vector3.ZERO 
-				viewAngle.x = viewRot.z / 90
-				print(viewAngle.x)
-				if viewAngle.x > 1 then  viewAngle.x = viewAngle.x - 1 end
-				if viewAngle.x < 1 then viewAngle.x = viewAngle.x + 1 end 
-				print(">>>>>>forw // viewAngle >>>>>>>>>>>>", forw.x, viewAngle.x, forw.x + viewAngle.x)
-				local shootVector = ( forw + viewAngle )* localPower
-			if debugPrint then 
-				print(script.name.." >> SHOOT VECTOR >> ", shootVector, " *FORCE:", localPower)
-				print(script.name.." >> FORWARD VECTOR [forw]: ",forw)
+			if isKick then 
+				local powerKick = data_1
+				local viewRot = data_2
+				local localPower  = BASE_FORCE * powerKick
+				viewRot.z = viewRot.z + Z_VECTOR
+				local shootVector = viewRot * localPower
+				if debugPrint then print(script.name.." >> KICK DATA >> power["..tostring(localPower).."] v3:", viewRot) end			
+				if Object.IsValid(player.serverUserData.ball) then
+					player.serverUserData.ball:SetVelocity(shootVector)
+					player.serverUserData.ball:SetAngularVelocity(Vector3.New(50,50,50))
+				end
+			elseif not isKick then 
+				
 			end 
-			if Object.IsValid(player.serverUserData.ball) then
-				player.serverUserData.ball:SetVelocity(shootVector)
-				--BALL:SetAngularVelocity(Vector3.New(50,50,50))
-			end
 		end 
 	end 
 end 
@@ -76,10 +68,9 @@ end
 
 
 function onEquip (equip, player)
-	Events.ConnectForPlayer("kickPower", onKickPower)
-	print(script.name.." >> "..player.name.." equip: "..equip.name)
+	Events.ConnectForPlayer("shootServer", onKickPower)
+	if debugPrint then print(script.name.." >> "..player.name.." equip: "..equip.name) end 
 	player.bindingPressedEvent:Connect( OnBindingPressed )
-	--player.bindingReleasedEvent:Connect( OnBindingReleased )
 end 
 
 SOCCER_CONTROL_EQ.equippedEvent:Connect( onEquip )
