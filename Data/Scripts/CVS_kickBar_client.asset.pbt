@@ -1,6 +1,6 @@
 Assets {
-  Id: 8368083611820705490
-  Name: "CVS shoot ball"
+  Id: 17514766973349998781
+  Name: "CVS_kickBar_client"
   PlatformAssetType: 3
   TextAsset {
   }

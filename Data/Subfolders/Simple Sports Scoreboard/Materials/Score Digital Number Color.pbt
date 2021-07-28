@@ -2,7 +2,7 @@ Assets {
   Id: 6400900961602937281
   Name: "Score Digital Number Color"
   PlatformAssetType: 13
-  SerializationVersion: 92
+  SerializationVersion: 94
   CustomMaterialAsset {
     BaseMaterialId: 5351428073291024820
     ParameterOverrides {

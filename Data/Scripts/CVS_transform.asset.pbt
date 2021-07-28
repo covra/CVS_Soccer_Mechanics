@@ -1,6 +1,6 @@
 Assets {
-  Id: 8368083611820705490
-  Name: "CVS shoot ball"
+  Id: 578243617532033029
+  Name: "CVS_transform"
   PlatformAssetType: 3
   TextAsset {
   }

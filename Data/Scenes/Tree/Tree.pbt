@@ -27,6 +27,7 @@ Objects {
   ChildIds: 3006374108434911274
   ChildIds: 11985998303233019268
   ChildIds: 16483296731540214017
+  ChildIds: 17375122368515383590
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -39,6 +40,38 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 17375122368515383590
+  Name: "DEBUG"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "DEBUG"
   }
 }
 Objects {
@@ -2502,12 +2535,12 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 9510747435264941747
+        Id: 582039170188888895
       }
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
+      Bool: true
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:vtile"
@@ -2541,7 +2574,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 5809646657182339693
+      Id: 15316710024635530132
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -2580,12 +2613,12 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 9510747435264941747
+        Id: 582039170188888895
       }
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
+      Bool: true
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:vtile"
@@ -2619,7 +2652,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 5809646657182339693
+      Id: 15316710024635530132
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -2656,12 +2689,12 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 9510747435264941747
+        Id: 582039170188888895
       }
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
+      Bool: true
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:vtile"
@@ -2695,7 +2728,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 5809646657182339693
+      Id: 15316710024635530132
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -2732,12 +2765,12 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 9510747435264941747
+        Id: 582039170188888895
       }
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
+      Bool: true
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:vtile"
@@ -2771,7 +2804,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 5809646657182339693
+      Id: 15316710024635530132
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -3316,12 +3349,12 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 9510747435264941747
+        Id: 582039170188888895
       }
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
+      Bool: true
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:vtile"
@@ -3355,7 +3388,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 5809646657182339693
+      Id: 15316710024635530132
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -3394,12 +3427,12 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 9510747435264941747
+        Id: 582039170188888895
       }
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
+      Bool: true
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:vtile"
@@ -3433,7 +3466,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 5809646657182339693
+      Id: 15316710024635530132
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -3470,12 +3503,12 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 9510747435264941747
+        Id: 582039170188888895
       }
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
+      Bool: true
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:vtile"
@@ -3509,7 +3542,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 5809646657182339693
+      Id: 15316710024635530132
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -3546,12 +3579,12 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 9510747435264941747
+        Id: 582039170188888895
       }
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:smart"
-      Bool: false
+      Bool: true
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:vtile"
@@ -3585,7 +3618,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 5809646657182339693
+      Id: 15316710024635530132
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -4669,7 +4702,7 @@ Objects {
   Name: "banda"
   Transform {
     Location {
-      X: 4508.69336
+      X: 4618.61328
       Y: 2.66967773
     }
     Rotation {
@@ -4721,7 +4754,7 @@ Objects {
   Name: "banda"
   Transform {
     Location {
-      X: -4679.71338
+      X: -4798.34521
       Y: 2.66967773
     }
     Rotation {
@@ -4773,7 +4806,7 @@ Objects {
   Name: "banda"
   Transform {
     Location {
-      X: 8.98632813
+      X: 8.98632812
       Y: 2719.83569
     }
     Rotation {
@@ -4891,8 +4924,20 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 9820631208293344696
+        Id: 17319990452583038585
       }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:smart"
+      Bool: false
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:utile"
+      Float: 5.21775055
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:vtile"
+      Float: 7.19161892
     }
   }
   Collidable_v2 {
@@ -5413,6 +5458,7 @@ Objects {
     MinPitch: -89
     MaxPitch: 89
     DoesPositionOffsetSpring: true
+    UseAsAudioListener: true
   }
 }
 Objects {
@@ -5593,6 +5639,36 @@ Objects {
           LowDistance: 4500
           MediumDistance: 7000
           HighDistance: 9000
+        }
+      }
+      VoiceChatSettings {
+        VoiceChatMode {
+          Value: "mc:evoicechatmode:none"
+        }
+        VoiceChannelType {
+          Value: "mc:evoicechanneltype:normal"
+        }
+        AudibleDistance: 6000
+        ConversationalDistance: 1500
+        AudioFadeModel {
+          Value: "mc:evoiceaudiofademodel:inverse"
+        }
+        AudioFadeIntensityByDistance: 1
+        VoiceChatPosition {
+          X: -40
+          Y: 40
+        }
+        VoiceChatHorizontalAlignment {
+          Value: "mc:ecorehorizontalalign:right"
+        }
+        VoiceChatVerticalAlignment {
+          Value: "mc:ecoreverticalalign:top"
+        }
+        VoiceChatEntryHorizontalFlow {
+          Value: "mc:ecorehorizontalflow:righttoleft"
+        }
+        VoiceChatEntryVerticalFlow {
+          Value: "mc:ecoreverticalflow:toptobottom"
         }
       }
       PlayerInteractDistance: 500

@@ -22,11 +22,11 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:baseForceShoot"
-            Float: 50
+            Float: 2500
           }
           Overrides {
             Name: "cs:defaultZAngle"
-            Float: 45
+            Float: 30
           }
           Overrides {
             Name: "cs:autoAddBall"
@@ -43,6 +43,14 @@ Assets {
             AssetReference {
               Id: 7723962630712344272
             }
+          }
+          Overrides {
+            Name: "cs:defaultZAngle:tooltip"
+            String: "Output angle when kick the soccer ball. Default = 30 degrees"
+          }
+          Overrides {
+            Name: "cs:baseForceShoot:tooltip"
+            String: "Max force when kicking the soccer ball"
           }
         }
         WantsNetworking: true
@@ -131,6 +139,14 @@ Assets {
           }
         }
         ParentId: 16401043384679813958
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:shape"
+            ObjectReference {
+              SubObjectId: 8203898171945882562
+            }
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -233,9 +249,9 @@ Assets {
         Name: "Ring - Quarter"
         Transform {
           Location {
-            X: -4.17290878
-            Y: -1.01632619
-            Z: 1.13319e-06
+            X: -4.17293739
+            Y: -1.01635885
+            Z: 2.59333706
           }
           Rotation {
             Pitch: -0.202030152
@@ -381,6 +397,7 @@ Assets {
         }
         ParentId: 18392585474569060532
         ChildIds: 11647636081282623444
+        ChildIds: 13883162493711205186
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -476,6 +493,39 @@ Assets {
         }
       }
       Objects {
+        Id: 13883162493711205186
+        Name: "CVS_kickBar_client"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 12900612877445824622
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 17514766973349998781
+          }
+        }
+      }
+      Objects {
         Id: 16978678271621866040
         Name: "StaticContext"
         Transform {
@@ -521,14 +571,14 @@ Assets {
             Z: 1.51092e-06
           }
           Rotation {
-            Pitch: -5.56475973
+            Pitch: -5.5647583
             Yaw: 179.69931
-            Roll: -2.77499461
+            Roll: -2.7749939
           }
           Scale {
-            X: 0.199062139
-            Y: 0.327201873
-            Z: 0.708324492
+            X: 0.599864304
+            Y: 0.464445591
+            Z: 0.708324432
           }
         }
         ParentId: 16978678271621866040
@@ -587,5 +637,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
 }

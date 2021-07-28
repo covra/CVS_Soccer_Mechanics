@@ -37,8 +37,8 @@ Assets {
           Settings {
             OverrideMass: true
             Mass: 20
-            LinearDamping: 1.5
-            AngularDamping: 1
+            LinearDamping: 0.5
+            AngularDamping: 0.5
           }
           Radius: 23
         }
@@ -135,5 +135,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 92
+  SerializationVersion: 94
 }

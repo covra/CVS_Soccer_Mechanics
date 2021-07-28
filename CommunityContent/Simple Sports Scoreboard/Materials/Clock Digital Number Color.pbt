@@ -2,7 +2,7 @@ Assets {
   Id: 6119652848312572420
   Name: "Clock Digital Number Color"
   PlatformAssetType: 13
-  SerializationVersion: 92
+  SerializationVersion: 94
   CustomMaterialAsset {
     BaseMaterialId: 5351428073291024820
     ParameterOverrides {
