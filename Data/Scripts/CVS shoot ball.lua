@@ -19,6 +19,7 @@ if DEFAULT_Z_ANGLE > 45 then
 end
 --assets
 local SOCCER_BALL = SOCCER_CONTROL_EQ:GetCustomProperty("soccerBall")
+local PASS_SPHERE = SOCCER_CONTROL_EQ:GetCustomProperty("passSphere")
 --local
 local OFFSET_FWD = 15
 local Z_VECTOR = DEFAULT_Z_ANGLE/90

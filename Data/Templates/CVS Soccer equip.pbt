@@ -23,6 +23,10 @@ Assets {
         ChildIds: 18392585474569060532
         UnregisteredParameters {
           Overrides {
+            Name: "cs:pass_Radius"
+            Float: 2000
+          }
+          Overrides {
             Name: "cs:baseForceShoot"
             Float: 5000
           }
@@ -44,6 +48,18 @@ Assets {
             Name: "cs:soccerBall"
             AssetReference {
               Id: 7723962630712344272
+            }
+          }
+          Overrides {
+            Name: "cs:passSphere"
+            AssetReference {
+              Id: 13064535480647139444
+            }
+          }
+          Overrides {
+            Name: "cs:UIPassPlayer"
+            AssetReference {
+              Id: 17688212967589320088
             }
           }
           Overrides {
@@ -73,6 +89,18 @@ Assets {
           Overrides {
             Name: "cs:ndb_Trigg:tooltip"
             String: "Internal reference for the \'Near detecting ball\' trigger. This is necessary to know if \'physics ball\' is on the player\'s feet (ownership)"
+          }
+          Overrides {
+            Name: "cs:pass_Radius:tooltip"
+            String: "This is the radius in cm where the system will try to find friendly players to pass the soccer ball (ability : \'Pass\'). Default = 2000"
+          }
+          Overrides {
+            Name: "cs:passSphere:tooltip"
+            String: "When player uses \'Pass\' ability, the system spawn a sphere to use as visual reference to know where team players within pass radius. If blank, no reference visual will be spawned"
+          }
+          Overrides {
+            Name: "cs:UIPassPlayer:tooltip"
+            String: "UI banner to show near team players within radius"
           }
         }
         WantsNetworking: true
@@ -692,6 +720,12 @@ Assets {
             Name: "cs:Pass_Ab"
             ObjectReference {
               SubObjectId: 4371732110621813514
+            }
+          }
+          Overrides {
+            Name: "cs:UI_near_players"
+            ObjectReference {
+              SelfId: 10968990455943655667
             }
           }
         }

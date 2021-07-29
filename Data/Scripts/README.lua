@@ -9,7 +9,11 @@ The 'CVS Soccer Equipment'
 	- From static position you can aim with the camera to add more angle to the shoot with the kick ability. If move the camera 
 	to down, the angle is increased, so you could be able to override a player barrier
 
-
+The asset: pass sphere
+----------------------
+	- When player uses 'Pass' ability, the system spawn a sphere to use as visual reference 
+	to know where team players within pass radius. If blank, no reference visual will be spawned
+	The scale of this reference is based on the radius (aprox):  sphereReferenceScale = passRadius*44/2000
 
 The soccer ball
 --------------

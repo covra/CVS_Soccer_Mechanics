@@ -9,6 +9,7 @@ local EQ_CONTROL = script:GetCustomProperty("CVSSoccerEquip")
 
 function OnPlayerJoined(player)
 	print(">>> MAIN > player joined: " .. player.name)
+	player.team = 1
 	if AUTO_START then 
 		local eq = World.SpawnAsset(EQ_CONTROL)
 		Task.Wait(1)
