@@ -63,6 +63,15 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:color_selected"
+            Color {
+              R: 0.0799999833
+              G: 0.670992851
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
             Name: "cs:debugPrint"
             Bool: false
           }
@@ -101,6 +110,10 @@ Assets {
           Overrides {
             Name: "cs:UIPassPlayer:tooltip"
             String: "UI banner to show near team players within radius"
+          }
+          Overrides {
+            Name: "cs:color_selected:tooltip"
+            String: "Color for team player selected to give the pass from the \'Pass\' ability. Default = cyan"
           }
         }
         WantsNetworking: true

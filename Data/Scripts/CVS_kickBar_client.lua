@@ -16,6 +16,7 @@ local UI_NEAR_PLAYERS_BANNER=  SOCCER_CONTROL_EQ:GetCustomProperty("UIPassPlayer
 local MAX_POWER_KICK = SOCCER_CONTROL_EQ:GetCustomProperty("baseForceShoot")
 local DEFAULT_Z_ANGLE = SOCCER_CONTROL_EQ:GetCustomProperty("defaultZAngle")
 local PASS_RADIUS = SOCCER_CONTROL_EQ:GetCustomProperty("pass_Radius")
+local COLOR_SELECT = SOCCER_CONTROL_EQ:GetCustomProperty("color_selected")
 local debugPrint =  SOCCER_CONTROL_EQ:GetCustomProperty("debugPrint")
 --assets
 local PASS_SPHERE = SOCCER_CONTROL_EQ:GetCustomProperty("passSphere")
@@ -49,15 +50,15 @@ function OnBindingPressed(player, binding)
 		player.clientUserData.passState = "aim"
 		nearTeamPlayer = nil
 		local nonTeamPlayers = {}
-		for _,ply in pairs (Game.GetPlayers({ignorePlayers = player})) do 
+		for _,ply in pairs (Game.GetPlayers()) do 
 			if ply.team ~= player.team then 
 				table.insert(nonTeamPlayers,ply)
 			end 
 		end 
+		table.insert(nonTeamPlayers,player)
 		local pos = player:GetWorldPosition()
 		local radius = PASS_RADIUS		
 		local nearPlayers = Game.FindPlayersInCylinder(pos, radius, {ignorePlayers = nonTeamPlayers})
-						--local nearPlayers = Game.FindPlayersInCylinder(pos, radius)
 		local params = {duration = 5, color = Color.GREEN, thickness = 16}
 		CoreDebug.DrawSphere(pos, radius, params)		
 		local scaleSphere = Vector3.ONE * scaleMult
@@ -79,6 +80,8 @@ function OnBindingPressed(player, binding)
 									if nearPlayer.name == playerName then 
 										nearTeamPlayer = nearPlayer
 										player.clientUserData.passState = "selected"
+										banner:FindChildByName("number"):SetColor(COLOR_SELECT)
+										banner:FindChildByName("playerName"):SetColor(COLOR_SELECT)
 										print (script.name..">> PASS PLAYER SELECTED: "..stringSub1, nearTeamPlayer.name)
 									end
 								end
@@ -112,6 +115,7 @@ function OnBindingReleased(player, binding)
 	end
 end
 
+--Ability Execute Event 'Kick'
 function onKickBall (ability)
 	local player = ability.owner
 	local targetData =  KICK_ABILITY:GetTargetData()
@@ -122,43 +126,59 @@ function onKickBall (ability)
 	TXT_V3.text = tostring(CoreMath.Round((kickDirection.z * 90)+ DEFAULT_Z_ANGLE,0) )
 end 
 
+--Ability Execute Event 'Pass'
 function onPassBall (ability)
 	local player = ability.owner
 	local isKick = false
 	Events.BroadcastToServer("shootServer", isKick, nearTeamPlayer)
 	Task.Wait()
 	player.clientUserData.passState = "nil"
+	resetPassState(player)
 end 
 
+--@table :table players
+--@player :self player
+--UI Show a list of banners with the info of the team players within the radius of the local player pass ability
 function showUIteamPlayers (tableIn, player)
 	UI_NEAR_PLAYERS_PANEL.visibility = Visibility.FORCE_ON
-						print(">>>>>>>>>>", #tableIn)
-						for k,v in pairs (tableIn) do 
-							print(k,v.name)
-						end
-	if Object.IsValid(tableIn) then 
+	if #tableIn > 0 then
 		local indexPlayers = 1
 		for _,ply in pairs (tableIn) do
-			local currentBanner = World.SpawnAsset(UI_NEAR_PLAYERS_BANNER,{parent = UI_NEAR_PLAYERS_PANEL})
-			currentBanner.lifeSpan = 10
-			currentBanner.y = UI_NEAR_PLAYERS_PANEL.y + (indexPlayers * (currentBanner.height + 5 ))
-			indexPlayers = indexPlayers + 1
+			if Object.IsValid(ply) then
+				local currentBanner = World.SpawnAsset(UI_NEAR_PLAYERS_BANNER,{parent = UI_NEAR_PLAYERS_PANEL})
+				currentBanner.lifeSpan = 10
+				currentBanner.y = UI_NEAR_PLAYERS_PANEL.y + (indexPlayers * (currentBanner.height + 5 ))
+				currentBanner:FindChildByName("number").text = tostring(indexPlayers)
+				currentBanner:FindChildByName("playerName").text = ply.name
+				currentBanner:FindChildByName("playerImage"):SetPlayerProfile(ply)
+				indexPlayers = indexPlayers + 1
+			end
 		end
 	else 
 		resetPassState(player)-- COMENTADO PARA HACER PRUEBAS EN SINGLE PLAYER
 	end 
 end 
 
+--@player :self player
+--Reset the state of the 'pass' ability
 function resetPassState (player)
 	if Object.IsValid(player) then
 		if player == localPlayer then
 			UI.PrintToScreen(" No team players in radius", Color.RED)
 			UI_NEAR_PLAYERS_PANEL.visibility = Visibility.FORCE_OFF
+			local banners = UI_NEAR_PLAYERS_PANEL:GetChildren()
+			for _, ban in pairs (banners) do 
+				if Object.IsValid (ban) then 
+					ban:Destroy()
+				end 
+			end 
 			player.clientUserData.passState = "nil"
 		end
 	end
 end
 
+
+--Equip event on player. Connect the abilities and the 'key press' actions
 function onEquip (equip, player)
 	if debugPrint then print(script.name.." >> "..player.name.." equip: "..equip.name) end 
 	KICK_ABILITY.executeEvent:Connect( onKickBall )
