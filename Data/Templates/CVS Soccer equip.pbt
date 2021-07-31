@@ -37,7 +37,7 @@ Assets {
           }
           Overrides {
             Name: "cs:speedPassAbility"
-            Float: 2000
+            Float: 1500
           }
           Overrides {
             Name: "cs:isVelocityK"
@@ -59,6 +59,18 @@ Assets {
           Overrides {
             Name: "cs:autoAddBall"
             Bool: true
+          }
+          Overrides {
+            Name: "cs:key_autoBall"
+            String: "ability_extra_44"
+          }
+          Overrides {
+            Name: "cs:key_KickLong"
+            String: "ability_primary"
+          }
+          Overrides {
+            Name: "cs:key_shortPass"
+            String: "ability_secondary"
           }
           Overrides {
             Name: "cs:ndb_Trigg"
@@ -139,6 +151,18 @@ Assets {
           Overrides {
             Name: "cs:timeToArrive:tooltip"
             String: "Time in seconds which will take to the ball to arrive (aprox) to near team player when using \'Pass\' ability. To enable, please disable \'isVelocityK\' custom property. Default = 2 "
+          }
+          Overrides {
+            Name: "cs:key_autoBall:tooltip"
+            String: "if custom property \'autoAdd\' is enabled, this will be the binding key to add a new soccer ball at player\'s feet. Default = \'ability_extra_44\'   (\'N\' key)"
+          }
+          Overrides {
+            Name: "cs:key_KickLong:tooltip"
+            String: "This will be the binding key to activate the \'Kick\' ability (long aimed shoot). Default = ability_primary (\'LeftMainButton\' mouse)"
+          }
+          Overrides {
+            Name: "cs:key_shortPass:tooltip"
+            String: "This will be the binding key to activate the \'Pass\' ability (short aimed pass to team player). Default = ability_secondary (\'RightMainButton\' mouse)"
           }
         }
         WantsNetworking: true
@@ -507,7 +531,10 @@ Assets {
           Overrides {
             Name: "cs:UI_near_players"
             ObjectReference {
-              SelfId: 10968990455943655667
+              SelfId: 7739512607019363431
+              SubObjectId: 15000265551684260509
+              InstanceId: 13592073659497046974
+              TemplateId: 3974301444724926198
             }
           }
         }

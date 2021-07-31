@@ -26,7 +26,7 @@ Objects {
   ChildIds: 680718933217535886
   ChildIds: 3006374108434911274
   ChildIds: 11985998303233019268
-  ChildIds: 16483296731540214017
+  ChildIds: 13592073659497046974
   ChildIds: 17375122368515383590
   UnregisteredParameters {
   }
@@ -75,13 +75,9 @@ Objects {
   }
 }
 Objects {
-  Id: 16483296731540214017
+  Id: 13592073659497046974
   Name: "CVS main control"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -89,43 +85,25 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:autoStart"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:roundEvent"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:customEvent"
-      String: ""
-    }
-    Overrides {
-      Name: "cs:UsePhysicsBall"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:autoStart:tooltip"
-      String: "if enabled, when player joins, system will equip him with the control equipment"
-    }
-  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "CVS main control"
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 5443814977555669771
+      value {
+        Overrides {
+          Name: "Name"
+          String: "CVS main control"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 3974301444724926198
+    }
   }
 }
 Objects {

@@ -28,8 +28,8 @@ local OFFSET_FWD = 15
 local Z_VECTOR = DEFAULT_Z_ANGLE/90
 local offsetRIGHT = 0.2
 local BALL = World.FindObjectByName("CVS soccer ball")
-local KEY_AUTO_BALL = "ability_extra_44" --'N'
-local KEY_SHOOT_BALL = "ability_primary"
+local KEY_AUTO_BALL = SOCCER_CONTROL_EQ:GetCustomProperty("key_autoBall") --"ability_extra_44" --'N'
+local KEY_SHOOT_BALL = SOCCER_CONTROL_EQ:GetCustomProperty("key_KickLong") --"ability_primary"
 --validation
 if not BALL then 
 	error(" >> This script has to find the ball. Needs the correct name, check this")

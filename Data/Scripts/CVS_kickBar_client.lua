@@ -21,8 +21,8 @@ local debugPrint =  SOCCER_CONTROL_EQ:GetCustomProperty("debugPrint")
 --assets
 local PASS_SPHERE = SOCCER_CONTROL_EQ:GetCustomProperty("passSphere")
 --local
-local KEY_SHOOT_BALL = "ability_primary"
-local KEY_PASS_BALL = "ability_secondary"
+local KEY_SHOOT_BALL = SOCCER_CONTROL_EQ:GetCustomProperty("key_KickLong")
+local KEY_PASS_BALL = SOCCER_CONTROL_EQ:GetCustomProperty("key_shortPass")
 local powerKick = 0
 local scaleMult = (PASS_RADIUS*44/2000)
 local bindReleased = false
@@ -87,7 +87,7 @@ function OnBindingPressed(player, binding)
 										player.clientUserData.passState = "selected"
 										banner:FindChildByName("number"):SetColor(COLOR_SELECT)
 										banner:FindChildByName("playerName"):SetColor(COLOR_SELECT)
-										print (script.name..">> PASS PLAYER SELECTED: "..stringSub1, nearTeamPlayer.name)
+										if debugPrint then print (script.name..">> PASS PLAYER SELECTED: "..stringSub1, nearTeamPlayer.name) end
 									end
 								end
 							end 
