@@ -27,6 +27,7 @@ local powerKick = 0
 local scaleMult = (PASS_RADIUS*44/2000)
 local bindReleased = false
 local localPlayer = Game.GetLocalPlayer()
+local nearPlayers = {}
 local nearTeamPlayer = nil
 localPlayer.clientUserData.passState = "nil"
 --validation
@@ -36,7 +37,9 @@ end
 
 -----------------------------FUNCTIONS---------------------------------------------------
 
+--EVENT key pressed
 function OnBindingPressed(player, binding)
+	--KICK ABILITY binding
 	if (binding == KEY_SHOOT_BALL) and player == SOCCER_CONTROL_EQ.owner then 
 		powerKick = 0
 		bindReleased = false
@@ -46,6 +49,7 @@ function OnBindingPressed(player, binding)
 			if powerKick >= 1 then powerKick = 0 end 
 			Task.Wait(0.05)
 		until powerKick == 1 or bindReleased
+	--PASS ABILITY binding
 	elseif (binding == KEY_PASS_BALL) and player == SOCCER_CONTROL_EQ.owner and player.clientUserData.passState == "nil" then 
 		player.clientUserData.passState = "aim"
 		nearTeamPlayer = nil
@@ -58,13 +62,14 @@ function OnBindingPressed(player, binding)
 		table.insert(nonTeamPlayers,player)
 		local pos = player:GetWorldPosition()
 		local radius = PASS_RADIUS		
-		local nearPlayers = Game.FindPlayersInCylinder(pos, radius, {ignorePlayers = nonTeamPlayers})
+		nearPlayers = Game.FindPlayersInCylinder(pos, radius, {ignorePlayers = nonTeamPlayers})
 		local params = {duration = 5, color = Color.GREEN, thickness = 16}
 		CoreDebug.DrawSphere(pos, radius, params)		
 		local scaleSphere = Vector3.ONE * scaleMult
 		player.clientUserData.passSphere = World.SpawnAsset(PASS_SPHERE,{position = pos, scale = scaleSphere })
 		showUIteamPlayers(nearPlayers, player)
-	elseif player.clientUserData.passState == "aim" and player == SOCCER_CONTROL_EQ.owner then 
+	--PASS ABILITY player selection
+	elseif player.clientUserData.passState == "show" and player == SOCCER_CONTROL_EQ.owner then 
 		local stringSub1 = string.sub (binding,15,15)
 		local stringSub2 = string.sub(binding,16,16)
 		if stringSub1 == "1" or stringSub1 == "2" or stringSub1 == "3" or stringSub1 == "4" or
@@ -73,10 +78,10 @@ function OnBindingPressed(player, binding)
 				for _,banner in pairs (UI_NEAR_PLAYERS_PANEL:GetChildren()) do 
 					if banner.name ~= "Title" then 
 						local numBanner = banner:FindChildByName("number")
-						if numBanner == stringSub1 then 
+						if numBanner.text == stringSub1 then 
 							local playerName = (banner:FindChildByName("playerName")).text
 							for _,nearPlayer in pairs (nearPlayers) do 
-								if Object.IsValid (nearPlayer) then 
+								if Object.IsValid (nearPlayer) then								
 									if nearPlayer.name == playerName then 
 										nearTeamPlayer = nearPlayer
 										player.clientUserData.passState = "selected"
@@ -94,7 +99,10 @@ function OnBindingPressed(player, binding)
 	end
 end
 
+
+--EVENT key released
 function OnBindingReleased(player, binding)
+	--KICK ABILITY released
 	if (binding == KEY_SHOOT_BALL) and player == SOCCER_CONTROL_EQ.owner then 
 		bindReleased = true
 		if powerKick > 0 then 
@@ -105,12 +113,13 @@ function OnBindingReleased(player, binding)
 		TXT_BAR.text = tostring(CoreMath.Round(powerKick *MAX_POWER_KICK,0)).."/"..tostring(CoreMath.Round(MAX_POWER_KICK,0))
 		powerKick = 0
 		KICK_BAR.progress = powerKick	
+	--PASS ABILITY released
 	elseif (binding == KEY_PASS_BALL) and player == SOCCER_CONTROL_EQ.owner then 
 		if Object.IsValid(player.clientUserData.passSphere) then player.clientUserData.passSphere:Destroy() end
 		if player.clientUserData.passState == "selected" then 
 			PASS_ABILITY:Activate()
 		else 
-			player.clientUserData.passState = "nil"
+			resetPassState (player)
 		end
 	end
 end
@@ -140,8 +149,9 @@ end
 --@player :self player
 --UI Show a list of banners with the info of the team players within the radius of the local player pass ability
 function showUIteamPlayers (tableIn, player)
-	UI_NEAR_PLAYERS_PANEL.visibility = Visibility.FORCE_ON
+	UI_NEAR_PLAYERS_PANEL.visibility = Visibility.FORCE_ON	
 	if #tableIn > 0 then
+		player.clientUserData.passState = "show"
 		local indexPlayers = 1
 		for _,ply in pairs (tableIn) do
 			if Object.IsValid(ply) then
@@ -155,6 +165,7 @@ function showUIteamPlayers (tableIn, player)
 			end
 		end
 	else 
+		UI.PrintToScreen(" No team players in radius", Color.RED)
 		resetPassState(player)-- COMENTADO PARA HACER PRUEBAS EN SINGLE PLAYER
 	end 
 end 
@@ -163,15 +174,15 @@ end
 --Reset the state of the 'pass' ability
 function resetPassState (player)
 	if Object.IsValid(player) then
-		if player == localPlayer then
-			UI.PrintToScreen(" No team players in radius", Color.RED)
+		if player == localPlayer then			
 			UI_NEAR_PLAYERS_PANEL.visibility = Visibility.FORCE_OFF
 			local banners = UI_NEAR_PLAYERS_PANEL:GetChildren()
 			for _, ban in pairs (banners) do 
 				if Object.IsValid (ban) then 
 					ban:Destroy()
 				end 
-			end 
+			end
+			nearPlayers = {}
 			player.clientUserData.passState = "nil"
 		end
 	end

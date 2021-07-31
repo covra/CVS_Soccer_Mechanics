@@ -18,8 +18,9 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 10041703835105011597
         ChildIds: 4371732110621813514
-        ChildIds: 17216924272719951893
         ChildIds: 7718894334649025434
+        ChildIds: 3828502155009149990
+        ChildIds: 12900612877445824622
         ChildIds: 18392585474569060532
         UnregisteredParameters {
           Overrides {
@@ -33,6 +34,27 @@ Assets {
           Overrides {
             Name: "cs:defaultZAngle"
             Float: 40
+          }
+          Overrides {
+            Name: "cs:speedPassAbility"
+            Float: 2000
+          }
+          Overrides {
+            Name: "cs:isVelocityK"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:timeToArrive"
+            Float: 2
+          }
+          Overrides {
+            Name: "cs:color_selected"
+            Color {
+              R: 0.0799999833
+              G: 0.670992851
+              B: 1
+              A: 1
+            }
           }
           Overrides {
             Name: "cs:autoAddBall"
@@ -60,15 +82,6 @@ Assets {
             Name: "cs:UIPassPlayer"
             AssetReference {
               Id: 17688212967589320088
-            }
-          }
-          Overrides {
-            Name: "cs:color_selected"
-            Color {
-              R: 0.0799999833
-              G: 0.670992851
-              B: 1
-              A: 1
             }
           }
           Overrides {
@@ -114,6 +127,18 @@ Assets {
           Overrides {
             Name: "cs:color_selected:tooltip"
             String: "Color for team player selected to give the pass from the \'Pass\' ability. Default = cyan"
+          }
+          Overrides {
+            Name: "cs:speedPassAbility:tooltip"
+            String: "Speed of the \'Pass\'  ability in cm/s. Default = 150"
+          }
+          Overrides {
+            Name: "cs:isVelocityK:tooltip"
+            String: "If enabled, the speed of the \'Pass\' ability will be constant. If players are near to each other , this could be an inconvenient, but if they are far from each other,  will be more difficult to opponent players to stole the ball. Default = enabled"
+          }
+          Overrides {
+            Name: "cs:timeToArrive:tooltip"
+            String: "Time in seconds which will take to the ball to arrive (aprox) to near team player when using \'Pass\' ability. To enable, please disable \'isVelocityK\' custom property. Default = 2 "
           }
         }
         WantsNetworking: true
@@ -289,57 +314,6 @@ Assets {
         }
       }
       Objects {
-        Id: 17216924272719951893
-        Name: "CVS_nearDetectingBall"
-        Transform {
-          Location {
-            X: -3.05175781e-05
-          }
-          Rotation {
-            Yaw: -1.05120871e-05
-            Roll: -1.067217e-06
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16401043384679813958
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:ndbTrigg"
-            ObjectReference {
-              SubObjectId: 1625075445606608531
-            }
-          }
-          Overrides {
-            Name: "cs:shapeControl"
-            ObjectReference {
-              SubObjectId: 8203898171945882562
-            }
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 15386632311945564786
-          }
-        }
-      }
-      Objects {
         Id: 7718894334649025434
         Name: "CVS shoot ball"
         Transform {
@@ -382,6 +356,180 @@ Assets {
         }
       }
       Objects {
+        Id: 3828502155009149990
+        Name: "ServerContext"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16401043384679813958
+        ChildIds: 17216924272719951893
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+          Type: Server
+        }
+      }
+      Objects {
+        Id: 17216924272719951893
+        Name: "CVS_nearDetectingBall"
+        Transform {
+          Location {
+            X: -3.05175781e-05
+          }
+          Rotation {
+            Yaw: -1.05120862e-05
+            Roll: -1.06721689e-06
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3828502155009149990
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:ndbTrigg"
+            ObjectReference {
+              SubObjectId: 1625075445606608531
+            }
+          }
+          Overrides {
+            Name: "cs:shapeControl"
+            ObjectReference {
+              SubObjectId: 8203898171945882562
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 15386632311945564786
+          }
+        }
+      }
+      Objects {
+        Id: 12900612877445824622
+        Name: "ClientContext"
+        Transform {
+          Location {
+            X: 152.118286
+            Y: 10.2511826
+            Z: 59.6711273
+          }
+          Rotation {
+            Pitch: -6.83018879e-06
+            Yaw: -1.08856129e-05
+            Roll: -1.28065983e-06
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16401043384679813958
+        ChildIds: 13883162493711205186
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:forceoff"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        NetworkContext {
+        }
+      }
+      Objects {
+        Id: 13883162493711205186
+        Name: "CVS_kickBar_client"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 12900612877445824622
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Kick_Ab"
+            ObjectReference {
+              SubObjectId: 10041703835105011597
+            }
+          }
+          Overrides {
+            Name: "cs:Pass_Ab"
+            ObjectReference {
+              SubObjectId: 4371732110621813514
+            }
+          }
+          Overrides {
+            Name: "cs:UI_near_players"
+            ObjectReference {
+              SelfId: 10968990455943655667
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 17514766973349998781
+          }
+        }
+      }
+      Objects {
         Id: 18392585474569060532
         Name: "addon"
         Transform {
@@ -403,7 +551,6 @@ Assets {
         }
         ParentId: 16401043384679813958
         ChildIds: 8203898171945882562
-        ChildIds: 12900612877445824622
         ChildIds: 16978678271621866040
         WantsNetworking: true
         Collidable_v2 {
@@ -591,31 +738,28 @@ Assets {
         }
       }
       Objects {
-        Id: 12900612877445824622
-        Name: "ClientContext"
+        Id: 16978678271621866040
+        Name: "StaticContext"
         Transform {
           Location {
-            X: -10
-            Y: -1.7689966
-            Z: -3.65850687
+            X: 2.02786112
+            Y: -1.27815199
+            Z: -13.4207878
           }
           Rotation {
-            Pitch: -5.56477356
-            Yaw: 179.69931
-            Roll: -2.77498555
           }
           Scale {
-            X: 0.704139769
-            Y: 0.704139769
-            Z: 0.704139769
+            X: 1
+            Y: 1
+            Z: 1
           }
         }
         ParentId: 18392585474569060532
         ChildIds: 11647636081282623444
-        ChildIds: 13883162493711205186
+        ChildIds: 1625075445606608531
         WantsNetworking: true
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
+          Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
           Value: "mc:evisibilitysetting:inheritfromparent"
@@ -627,6 +771,7 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         NetworkContext {
+          Type: RuntimeStatic
         }
       }
       Objects {
@@ -634,22 +779,22 @@ Assets {
         Name: "ref"
         Transform {
           Location {
-            X: -1.55543657e-05
-            Y: -1.78875234e-05
-            Z: -104.383591
+            X: -4.92755
+            Y: -4.08658218
+            Z: -63.306179
           }
           Rotation {
-            Pitch: 6.83018879e-06
-            Yaw: 1.08856129e-05
-            Roll: 1.28066097e-06
+            Pitch: -5.56476641
+            Yaw: 179.69931
+            Roll: -2.77498531
           }
           Scale {
-            X: 0.209644631
-            Y: 0.209644601
-            Z: 1.59236765
+            X: 0.147619128
+            Y: 0.147619098
+            Z: 1.12124944
           }
         }
-        ParentId: 12900612877445824622
+        ParentId: 16978678271621866040
         UnregisteredParameters {
           Overrides {
             Name: "bp:Corner Rounding"
@@ -705,95 +850,6 @@ Assets {
         }
         Relevance {
           Value: "mc:eproxyrelevance:medium"
-        }
-      }
-      Objects {
-        Id: 13883162493711205186
-        Name: "CVS_kickBar_client"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 12900612877445824622
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Kick_Ab"
-            ObjectReference {
-              SubObjectId: 10041703835105011597
-            }
-          }
-          Overrides {
-            Name: "cs:Pass_Ab"
-            ObjectReference {
-              SubObjectId: 4371732110621813514
-            }
-          }
-          Overrides {
-            Name: "cs:UI_near_players"
-            ObjectReference {
-              SelfId: 10968990455943655667
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 17514766973349998781
-          }
-        }
-      }
-      Objects {
-        Id: 16978678271621866040
-        Name: "StaticContext"
-        Transform {
-          Location {
-            X: 2.02786112
-            Y: -1.27815199
-            Z: -13.4207878
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 18392585474569060532
-        ChildIds: 1625075445606608531
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        NetworkContext {
-          Type: RuntimeStatic
         }
       }
       Objects {

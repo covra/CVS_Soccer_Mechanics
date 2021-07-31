@@ -103,6 +103,10 @@ Objects {
       String: ""
     }
     Overrides {
+      Name: "cs:UsePhysicsBall"
+      Bool: false
+    }
+    Overrides {
       Name: "cs:autoStart:tooltip"
       String: "if enabled, when player joins, system will equip him with the control equipment"
     }

@@ -104,7 +104,6 @@ Objects {
   }
   ParentId: 12407424889745120424
   ChildIds: 692596817526973382
-  ChildIds: 6223260958227332936
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -141,46 +140,6 @@ Objects {
           Value: "mc:euianchor:topleft"
         }
       }
-    }
-  }
-}
-Objects {
-  Id: 6223260958227332936
-  Name: "CVS UI player Near"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 10968990455943655667
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 2294994470686524012
-      value {
-        Overrides {
-          Name: "Name"
-          String: "CVS UI player Near"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 17688212967589320088
     }
   }
 }
