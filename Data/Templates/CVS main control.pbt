@@ -18,28 +18,55 @@ Assets {
         ParentId: 4781671109827199097
         ChildIds: 6258449495290854081
         ChildIds: 12237907381628123900
+        ChildIds: 7392171840115967522
         ChildIds: 1330390854846111261
         ChildIds: 3904503646069496321
         UnregisteredParameters {
           Overrides {
-            Name: "cs:autoStart"
+            Name: "cs:autoEquip"
             Bool: true
           }
           Overrides {
-            Name: "cs:roundEvent"
-            Bool: false
+            Name: "cs:simulatePhysicsBall"
+            Bool: true
           }
           Overrides {
-            Name: "cs:customEvent"
-            String: ""
+            Name: "cs:CVSSoccerBall"
+            AssetReference {
+              Id: 7723962630712344272
+            }
           }
           Overrides {
-            Name: "cs:UsePhysicsBall"
-            Bool: false
+            Name: "cs:CVSSoccerEquip"
+            AssetReference {
+              Id: 11973703339291775941
+            }
           }
           Overrides {
-            Name: "cs:autoStart:tooltip"
-            String: "if enabled, when player joins, system will equip him with the control equipment"
+            Name: "cs:refStart"
+            ObjectReference {
+              SubObjectId: 7392171840115967522
+            }
+          }
+          Overrides {
+            Name: "cs:autoEquip:tooltip"
+            String: "If enabled, when player joins, system will equip him with the soccer control equipment. Default = enabled"
+          }
+          Overrides {
+            Name: "cs:simulatePhysicsBall:tooltip"
+            String: "If enabled, players will play all time with a \'Core physics sphere\'. If disabled, system will simulate some effects and situations. Default = enabled"
+          }
+          Overrides {
+            Name: "cs:CVSSoccerBall:tooltip"
+            String: "soccerBall template from core physics sphere"
+          }
+          Overrides {
+            Name: "cs:CVSSoccerEquip:tooltip"
+            String: "Main soccer default system equipment. Includes \'kick\' and \'pass\' abilities"
+          }
+          Overrides {
+            Name: "cs:refStart:tooltip"
+            String: "Position reference to spawn the physics soccer ball at start"
           }
         }
         Collidable_v2 {
@@ -94,7 +121,7 @@ Assets {
       }
       Objects {
         Id: 12237907381628123900
-        Name: "CVS assignment"
+        Name: "CVS Soccer Main"
         Transform {
           Location {
           }
@@ -108,12 +135,6 @@ Assets {
         }
         ParentId: 5443814977555669771
         UnregisteredParameters {
-          Overrides {
-            Name: "cs:CVSSoccerEquip"
-            AssetReference {
-              Id: 11973703339291775941
-            }
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -130,6 +151,70 @@ Assets {
         Script {
           ScriptAsset {
             Id: 5852197665394000933
+          }
+        }
+      }
+      Objects {
+        Id: 7392171840115967522
+        Name: "refStart"
+        Transform {
+          Location {
+            X: -153.257629
+            Y: -82.3344193
+            Z: 218.511749
+          }
+          Rotation {
+          }
+          Scale {
+            X: 0.797460318
+            Y: 0.797460318
+            Z: 0.797460318
+          }
+        }
+        ParentId: 5443814977555669771
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 3453724037649553611
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.0699999928
+              G: 0.778278053
+              B: 1
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 18395693919263542144
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
           }
         }
       }
@@ -1443,6 +1528,24 @@ Assets {
             }
           }
         }
+      }
+    }
+    Assets {
+      Id: 18395693919263542144
+      Name: "Sphere"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_sphere_002"
+      }
+    }
+    Assets {
+      Id: 3453724037649553611
+      Name: "Additive Soft Edge"
+      PlatformAssetType: 2
+      PrimaryAsset {
+        AssetType: "MaterialAssetRef"
+        AssetId: "fxma_additive_edgefade"
       }
     }
     Assets {

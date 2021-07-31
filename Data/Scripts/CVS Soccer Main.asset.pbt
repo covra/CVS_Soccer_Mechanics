@@ -1,6 +1,6 @@
 Assets {
   Id: 5852197665394000933
-  Name: "CVS assignment"
+  Name: "CVS Soccer Main"
   PlatformAssetType: 3
   TextAsset {
   }

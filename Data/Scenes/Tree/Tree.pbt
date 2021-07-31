@@ -21,7 +21,6 @@ Objects {
   ChildIds: 407225266925827248
   ChildIds: 604178740688270382
   ChildIds: 7834295552748701430
-  ChildIds: 177543826697892941
   ChildIds: 1160964170548738259
   ChildIds: 680718933217535886
   ChildIds: 3006374108434911274
@@ -98,6 +97,16 @@ Objects {
         Overrides {
           Name: "Name"
           String: "CVS main control"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
         }
       }
     }
@@ -334,52 +343,6 @@ Objects {
     }
     TemplateAsset {
       Id: 6027201801218802290
-    }
-  }
-}
-Objects {
-  Id: 177543826697892941
-  Name: "CVS soccer ball"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 71933976809444979
-      value {
-        Overrides {
-          Name: "Name"
-          String: "CVS soccer ball"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -140
-            Y: -90
-            Z: 222.22438
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 7723962630712344272
     }
   }
 }

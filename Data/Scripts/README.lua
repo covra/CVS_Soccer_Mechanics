@@ -1,11 +1,15 @@
 --[[
 										The 'CVS Main Control'
 										----------------------
+	User exposed properties:
+	-----------------------
+		- autoEquip: If enabled, when player joins, system will equip him with the soccer control equipment. Default = enabled
+		- simulatePhysicsBall: If enabled, players will play all time with a 'Core physics sphere'. If disabled, system will simulate some effects and situations. Default = enabled
 	Scripts
 	-------
 		- README: This script. All the info, read-me! ;)
-		- CVS triggBounds: Destroys soccer balls when ball go out field bounds
-		- CVS assignment: When player joins , if enabled,add a new equipment to him
+		- CVS Soccer Main: When player joins , if enabled,add a new equipment to him
+		- CVS triggBounds: Destroys soccer balls when ball go out field bounds		
 		- CVS_playerPossesion:  Show (via event.broadcast) in a UI the owner of the ball
 
 
@@ -65,7 +69,15 @@
 	
 	The players barrier
 	-------------------
-	- A common 'metal player barrier'
+	- A common 'metal player barrier' TODO triggers
+	
+	Soccer Goals
+	------------
+		-TODO triggers
+		
+	ScoreBoards
+	------------
+		- TODO LOGICS
 
 
 
