@@ -1,5 +1,6 @@
 --custom
 local SOCCER_CONTROL_EQ = script:FindAncestorByType("Equipment")
+local MAIN_FOLDER = World.FindObjectByName("CVS main control")
 if not SOCCER_CONTROL_EQ:IsA("Equipment") then 
 	error(" >> This has to be an equipment")
 end
@@ -7,6 +8,13 @@ local NDB_TRIGGER = SOCCER_CONTROL_EQ:GetCustomProperty("ndb_Trigg"):WaitForObje
 local OWN_SHAPE = script:GetCustomProperty("shape"):WaitForObject()
 --user exposed
 local debugPrint =  SOCCER_CONTROL_EQ:GetCustomProperty("debugPrint")
+local SIM_PHYSICS_BALL = nil
+Task.Spawn(function()
+	if not MAIN_FOLDER then
+		error(" 'CVS main control' folder has to be found to check custom properties. Check then name or the folder")
+	else 
+		SIM_PHYSICS_BALL = MAIN_FOLDER:GetCustomProperty("simulatePhysicsBall")
+	end end,3)
 local IS_AUTO_BALL = SOCCER_CONTROL_EQ:GetCustomProperty("autoAddBall")
 if debugPrint then 
 	print(script.name.." >> AUTO ADD BALL is enabled? : ", IS_AUTO_BALL)
@@ -32,7 +40,7 @@ local KEY_SHOOT_BALL = SOCCER_CONTROL_EQ:GetCustomProperty("key_KickLong") --"ab
 --validation
 Task.Spawn(function()
 	local BALL = World.FindObjectByName("CVS soccer ball")
-	if not BALL then 
+	if not BALL and SIM_PHYSICS_BALL then 
 		error(" >> This script has to find the ball. Needs the correct name, check this")
 	end 
 end,3)
@@ -62,6 +70,19 @@ function onKickPower (player,isKick, data_1, data_2)
 					local localPower  = BASE_FORCE * powerKick
 					viewRot.z = viewRot.z + Z_VECTOR
 					local shootVector = viewRot * localPower
+					if not SIM_PHYSICS_BALL then 
+						NDB_TRIGGER.serverUserData.forceEnabled = false
+						player.serverUserData.ball = World.SpawnAsset(SOCCER_BALL,{position = NDB_TRIGGER:GetWorldPosition() })
+						_G.ownerBall = nil
+						Task.Spawn(function()
+							Events.BroadcastToAllPlayers("ballOwner",_G.ownerBall)
+							Task.Wait()
+						end)
+						Task.Spawn(function()
+							NDB_TRIGGER.serverUserData.forceEnabled = true
+							SOCCER_CONTROL_EQ.owner.serverUserData.ball = nil 
+						end, 1)
+					end
 					if debugPrint then print(script.name.." >> KICK DATA >> power["..tostring(localPower).."] v3:", viewRot," velocity:",shootVector) end			
 					if Object.IsValid(player.serverUserData.ball) then
 						player.serverUserData.ball:SetVelocity(shootVector)

@@ -484,6 +484,7 @@ Assets {
         }
         ParentId: 16401043384679813958
         ChildIds: 13883162493711205186
+        ChildIds: 13754294136757573350
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -553,6 +554,84 @@ Assets {
         Script {
           ScriptAsset {
             Id: 17514766973349998781
+          }
+        }
+      }
+      Objects {
+        Id: 13754294136757573350
+        Name: "Ball - Soccer 01"
+        Transform {
+          Location {
+            Z: -19.8447266
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 12900612877445824622
+        ChildIds: 2274331723213705198
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 1066892370692236400
+          }
+          Teams {
+          }
+          DisableReceiveDecals: true
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 2274331723213705198
+        Name: "CVS ballSimulator"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13754294136757573350
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 8200375635595770569
           }
         }
       }
@@ -924,6 +1003,15 @@ Assets {
       }
     }
     Assets {
+      Id: 1066892370692236400
+      Name: "Ball - Soccer 01"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_prop_urb_ball_soccer_01_ref"
+      }
+    }
+    Assets {
       Id: 808408539445127481
       Name: "Ring - Quarter"
       PlatformAssetType: 1
@@ -956,4 +1044,5 @@ Assets {
     }
   }
   SerializationVersion: 94
+  DirectlyPublished: true
 }

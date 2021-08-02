@@ -7,6 +7,8 @@ function onChangeOwner(player)
 		_G.ownerBall = player
 		PLAYER_NAME.text = player.name
 		PLAYER_IMAGE:SetPlayerProfile(player)
+	elseif player == nil then 
+		_G.ownerBall = player
 	end 
 end 
 

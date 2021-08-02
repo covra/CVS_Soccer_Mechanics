@@ -28,7 +28,7 @@ Assets {
           }
           Overrides {
             Name: "cs:simulatePhysicsBall"
-            Bool: true
+            Bool: false
           }
           Overrides {
             Name: "cs:CVSSoccerBall"
@@ -190,10 +190,10 @@ Assets {
           }
         }
         Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:forceoff"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
+          Value: "mc:evisibilitysetting:forceoff"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1563,4 +1563,5 @@ Assets {
     }
   }
   SerializationVersion: 94
+  DirectlyPublished: true
 }
