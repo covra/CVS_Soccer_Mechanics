@@ -69,15 +69,15 @@
 	
 	The players barrier
 	-------------------
-	- A common 'metal player barrier' TODO triggers
+	- A common 'metal player barrier'. When the ball hits the barrier, a red signal appears
 	
 	Soccer Goals
 	------------
-		-TODO triggers
-		
+		- Simple goals. By default they have the name of the soccer ball to reconignize it when overlaps the  goal boundrie
+		- In adittion they have a Event.Name to broadcast everyone the gol. All can be customized		
 	ScoreBoards
 	------------
-		- TODO LOGICS
+		- Simple scoreBoards. They need to know the name of the goal event. By default is the same that the goals
 
 
 

@@ -15,12 +15,20 @@ Assets {
             Z: 1.80000007
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 1806399912486264426
+        ChildIds: 18045679458167278984
         ChildIds: 4169780062848796642
         ChildIds: 8387472824720040703
-        ChildIds: 16412388245553643085
         ChildIds: 5889454950513335514
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:goalEventName"
+            String: "golInGoal"
+          }
+          Overrides {
+            Name: "cs:goalEventName:tooltip"
+            String: "This is the name of the event to change the score"
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -33,6 +41,53 @@ Assets {
         }
         Folder {
           IsGroup: true
+        }
+      }
+      Objects {
+        Id: 18045679458167278984
+        Name: "CVS scoreBoards logics"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16918874265269822546
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:redScoreTxt"
+            ObjectReference {
+              SubObjectId: 13913937087913376651
+            }
+          }
+          Overrides {
+            Name: "cs:blueScoreTxt"
+            ObjectReference {
+              SubObjectId: 7214750826282344628
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 17690537332988289787
+          }
         }
       }
       Objects {
@@ -2168,7 +2223,7 @@ Assets {
       }
       Objects {
         Id: 8387472824720040703
-        Name: "Red Score"
+        Name: "Scores"
         Transform {
           Location {
             X: -176.386948
@@ -2184,9 +2239,11 @@ Assets {
           }
         }
         ParentId: 16918874265269822546
+        ChildIds: 7214750826282344628
         ChildIds: 13913937087913376651
         UnregisteredParameters {
         }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2201,16 +2258,16 @@ Assets {
         }
       }
       Objects {
-        Id: 13913937087913376651
-        Name: "redScoreTxt"
+        Id: 7214750826282344628
+        Name: "blueScoreTxt"
         Transform {
           Location {
-            X: 59.7157516
-            Y: 4.23855226e-06
+            X: 515.273254
+            Y: -0.000203450501
             Z: 72.1022186
           }
           Rotation {
-            Yaw: 89.9999313
+            Yaw: 89.9999542
           }
           Scale {
             X: 9.12367
@@ -2219,6 +2276,7 @@ Assets {
           }
         }
         ParentId: 8387472824720040703
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2253,49 +2311,16 @@ Assets {
         }
       }
       Objects {
-        Id: 16412388245553643085
-        Name: "Blue Score"
+        Id: 13913937087913376651
+        Name: "redScoreTxt"
         Transform {
           Location {
-            X: 286.479584
-            Y: 14.6356926
-            Z: -88.7688904
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16918874265269822546
-        ChildIds: 7214750826282344628
-        UnregisteredParameters {
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Folder {
-          IsGroup: true
-        }
-      }
-      Objects {
-        Id: 7214750826282344628
-        Name: "blueScoreTxt"
-        Transform {
-          Location {
-            X: 52.4067612
+            X: 59.7157516
+            Y: 4.23855226e-06
             Z: 72.1022186
           }
           Rotation {
-            Yaw: 89.9999771
+            Yaw: 89.9999313
           }
           Scale {
             X: 9.12367
@@ -2303,7 +2328,8 @@ Assets {
             Z: 11.3645668
           }
         }
-        ParentId: 16412388245553643085
+        ParentId: 8387472824720040703
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }

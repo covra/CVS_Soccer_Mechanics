@@ -8,15 +8,6 @@ Assets {
   }
 }
 Assets {
-  Id: 15316710024635530132
-  Name: "Plane 1m - One Sided"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_plane_1m_001"
-  }
-}
-Assets {
   Id: 14589306600383049433
   Name: "Decal Road Lines 01"
   PlatformAssetType: 14
@@ -62,15 +53,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9963007650780303032
-  Name: "Basic Material"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_basic_pbr_material_001"
-  }
-}
-Assets {
   Id: 7887238662729938253
   Name: "Sky Dome"
   PlatformAssetType: 6
@@ -89,15 +71,6 @@ Assets {
   }
 }
 Assets {
-  Id: 4904214870997420488
-  Name: "Cylinder"
-  PlatformAssetType: 1
-  PrimaryAsset {
-    AssetType: "StaticMeshAssetRef"
-    AssetId: "sm_cylinder_002"
-  }
-}
-Assets {
   Id: 3971792129721172539
   Name: "Measurement Tool"
   PlatformAssetType: 6
@@ -113,14 +86,5 @@ Assets {
   PrimaryAsset {
     AssetType: "SkinnedMeshAssetRef"
     AssetId: "npc_human_guy_head_military_001_ref"
-  }
-}
-Assets {
-  Id: 582039170188888895
-  Name: "Soccer Net 01"
-  PlatformAssetType: 2
-  PrimaryAsset {
-    AssetType: "MaterialAssetRef"
-    AssetId: "mi_net_002_uv_ref"
   }
 }
