@@ -611,15 +611,6 @@ Assets {
               SubObjectId: 16635359497457739766
             }
           }
-          Overrides {
-            Name: "cs:UI_near_players"
-            ObjectReference {
-              SelfId: 8785257638144355994
-              SubObjectId: 15000265551684260509
-              InstanceId: 17098756045108422477
-              TemplateId: 3974301444724926198
-            }
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1061,4 +1052,5 @@ Assets {
     }
   }
   SerializationVersion: 94
+  DirectlyPublished: true
 }

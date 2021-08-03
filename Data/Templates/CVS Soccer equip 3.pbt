@@ -611,15 +611,6 @@ Assets {
               SubObjectId: 17814979657522339201
             }
           }
-          Overrides {
-            Name: "cs:UI_near_players"
-            ObjectReference {
-              SelfId: 8785257638144355994
-              SubObjectId: 15000265551684260509
-              InstanceId: 17098756045108422477
-              TemplateId: 3974301444724926198
-            }
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -763,10 +754,12 @@ Assets {
         Transform {
           Location {
             X: -10.0000038
-            Y: -1.76899755
-            Z: -3.65852857
+            Y: -1.76897645
+            Z: -3.65852976
           }
           Rotation {
+            Yaw: -0.616790771
+            Roll: 6.32461357
           }
           Scale {
             X: 1
@@ -799,14 +792,14 @@ Assets {
         Name: "Ring - Quarter"
         Transform {
           Location {
-            X: -35.9210815
-            Y: -17.951086
-            Z: 0.341639668
+            X: -32.4551086
+            Y: -26.5047474
+            Z: 0.147271052
           }
           Rotation {
-            Pitch: -0.202026367
-            Yaw: 8.52459049
-            Roll: 2.71764278
+            Pitch: 0.851410329
+            Yaw: 22.5127964
+            Roll: 0.453486264
           }
           Scale {
             X: 1.45033109
@@ -867,14 +860,14 @@ Assets {
         Name: "Ring - Quarter"
         Transform {
           Location {
-            X: -33.3007317
-            Y: 25.0395412
-            Z: -2.15403247
+            X: -32.0408249
+            Y: 23.8954048
+            Z: -2.10217333
           }
           Rotation {
-            Pitch: 3.1614964
-            Yaw: -10.8752441
-            Roll: 168.879822
+            Pitch: 3.50629115
+            Yaw: -18.0409241
+            Roll: 173.300476
           }
           Scale {
             X: 1.45033109
@@ -1131,4 +1124,5 @@ Assets {
     }
   }
   SerializationVersion: 94
+  DirectlyPublished: true
 }

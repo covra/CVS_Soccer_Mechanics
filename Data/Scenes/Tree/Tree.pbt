@@ -80,79 +80,9 @@ Objects {
             Y: 546.930664
           }
         }
-      }
-    }
-    ParameterOverrideMap {
-      key: 4899863271155553854
-      value {
         Overrides {
           Name: "Rotation"
           Rotator {
-            Pitch: 3.50629115
-            Yaw: -18.0409241
-            Roll: 173.300476
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -32.0408249
-            Y: 23.8954048
-            Z: -2.10217333
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 14811194845486501457
-      value {
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: -5.54351807
-            Yaw: -179.428009
-            Roll: -2.81729126
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 15769359299494154843
-      value {
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -10.0000038
-            Y: -1.76897645
-            Z: -3.65852976
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Yaw: -0.616790771
-            Roll: 6.32461357
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 18312762150662526004
-      value {
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-            Pitch: 0.851410329
-            Yaw: 22.5127964
-            Roll: 0.453486264
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -32.4551086
-            Y: -26.5047474
-            Z: 0.147271052
           }
         }
       }
@@ -209,7 +139,7 @@ Objects {
 }
 Objects {
   Id: 11957221845899353369
-  Name: "CVS Soccer equip"
+  Name: "CVS Soccer equip default"
   Transform {
     Scale {
       X: 1
@@ -512,10 +442,6 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
-        }
-        Overrides {
-          Name: "cs:autoEquip"
-          Bool: false
         }
       }
     }

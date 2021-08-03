@@ -7,7 +7,7 @@ Assets {
       RootId: 16401043384679813958
       Objects {
         Id: 16401043384679813958
-        Name: "CVS Soccer equip"
+        Name: "CVS Soccer equip default"
         Transform {
           Scale {
             X: 1
@@ -609,15 +609,6 @@ Assets {
             Name: "cs:Pass_Ab"
             ObjectReference {
               SubObjectId: 4371732110621813514
-            }
-          }
-          Overrides {
-            Name: "cs:UI_near_players"
-            ObjectReference {
-              SelfId: 8785257638144355994
-              SubObjectId: 15000265551684260509
-              InstanceId: 17098756045108422477
-              TemplateId: 3974301444724926198
             }
           }
         }

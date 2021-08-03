@@ -28,6 +28,8 @@
 	EXAMPLE GAME	
 	------------
 	https://www.coregames.com/games/e4a3c2/testsoccer	
+		The Game is EDITABLE!
+	
 	
 	post in coreForums: 
 	https://forums.coregames.com/t/sports-ball-system-cvs-soccer-system/1816

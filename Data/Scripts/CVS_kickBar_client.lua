@@ -10,7 +10,7 @@ local TEXT_PANEL = BAR_PANEL:FindChildByName("UI Ball direction")
 local TXT_V3 = TEXT_PANEL:FindChildByType("UIText")
 local KICK_ABILITY = script:GetCustomProperty("Kick_Ab"):WaitForObject()
 local PASS_ABILITY = script:GetCustomProperty("Pass_Ab"):WaitForObject()
-local UI_NEAR_PLAYERS_PANEL = script:GetCustomProperty("UI_near_players"):WaitForObject()
+local UI_NEAR_PLAYERS_PANEL = World.FindObjectByName("UI nearPlayers")
 local UI_NEAR_PLAYERS_BANNER=  SOCCER_CONTROL_EQ:GetCustomProperty("UIPassPlayer")
 --user exposed
 local MAX_POWER_KICK = SOCCER_CONTROL_EQ:GetCustomProperty("baseForceShoot")

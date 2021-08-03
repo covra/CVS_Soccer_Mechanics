@@ -23,7 +23,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:autoEquip"
-            Bool: true
+            Bool: false
           }
           Overrides {
             Name: "cs:simulatePhysicsBall"
