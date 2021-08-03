@@ -7,7 +7,7 @@ Assets {
       RootId: 8657188320797977622
       Objects {
         Id: 8657188320797977622
-        Name: "CVS soccer goal"
+        Name: "CVS soccer goal South"
         Transform {
           Scale {
             X: 1.2
@@ -22,7 +22,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:Team"
-            Int: 1
+            Int: 2
           }
           Overrides {
             Name: "cs:soccerBallName"
@@ -1066,8 +1066,9 @@ Assets {
         Name: "collide_extra_non_visible"
         Transform {
           Location {
-            X: 74.843544
-            Z: 38.2111473
+            X: 74.8433151
+            Y: -1.33475623e-06
+            Z: 20.2893829
           }
           Rotation {
             Pitch: 90

@@ -51,14 +51,16 @@ end,3)
 function OnBindingPressed(player, binding)
 	if binding == KEY_AUTO_BALL and IS_AUTO_BALL then
 		if debugPrint then print(script.name.." >> adding new ball") end 
-		local soccer_ball = World.SpawnAsset(SOCCER_BALL,{position = NDB_TRIGGER:GetWorldPosition()})		
-		BALL = soccer_ball
+		if Object.IsValid (NDB_TRIGGER) then 
+			local soccer_ball = World.SpawnAsset(SOCCER_BALL,{position = NDB_TRIGGER:GetWorldPosition()})		
+			BALL = soccer_ball
+		end
 	end
 end
 
 --Receive data from client script and move the soccer ball
 function onKickPower (player,isKick, data_1, data_2)
-	if player == SOCCER_CONTROL_EQ.owner then 
+	if Object.IsValid(SOCCER_CONTROL_EQ) and  player == SOCCER_CONTROL_EQ.owner then 
 		if _G.ownerBall == player then 	
 			OWN_SHAPE.collision = Collision.FORCE_OFF
 			OWN_SHAPE.visibility = Visibility.FORCE_OFF 

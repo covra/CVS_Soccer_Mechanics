@@ -46,6 +46,14 @@ function OnEndOverlap(whichTrigger, other)
 	end 
 end
 
+function onUnequip (equip, player)
+	if Object.IsValid(equip) and equip.owner == player then 
+		if Object.IsValid(beginOvEv) then beginOvEv:Disconnect() end 
+		if Object.IsValid(EndOvEv) then beginOvEv:Disconnect() end 
+	end 
+end 
 
-NDB_TRIGG.beginOverlapEvent:Connect(OnBeginOverlap)
-NDB_TRIGG.endOverlapEvent:Connect(OnEndOverlap)
+
+SOCCER_CONTROL_EQ.unequippedEvent:Connect( onUnequip )
+local beginOvEv = NDB_TRIGG.beginOverlapEvent:Connect(OnBeginOverlap)
+local EndOvEv = NDB_TRIGG.endOverlapEvent:Connect(OnEndOverlap)

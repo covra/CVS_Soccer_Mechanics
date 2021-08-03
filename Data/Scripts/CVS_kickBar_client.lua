@@ -40,7 +40,7 @@ end
 --EVENT key pressed
 function OnBindingPressed(player, binding)
 	--KICK ABILITY binding
-	if (binding == KEY_SHOOT_BALL) and player == SOCCER_CONTROL_EQ.owner then 
+	if (binding == KEY_SHOOT_BALL) and Object.IsValid(SOCCER_CONTROL_EQ) and player == SOCCER_CONTROL_EQ.owner then 
 		powerKick = 0
 		bindReleased = false
 		repeat
@@ -103,7 +103,7 @@ end
 --EVENT key released
 function OnBindingReleased(player, binding)
 	--KICK ABILITY released
-	if (binding == KEY_SHOOT_BALL) and player == SOCCER_CONTROL_EQ.owner then 
+	if (binding == KEY_SHOOT_BALL) and Object.IsValid(SOCCER_CONTROL_EQ) and player == SOCCER_CONTROL_EQ.owner then 
 		bindReleased = true
 		if powerKick > 0 then 
 			player.clientUserData.powerKick = powerKick	

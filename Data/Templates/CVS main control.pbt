@@ -16,7 +16,6 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 6258449495290854081
         ChildIds: 12237907381628123900
         ChildIds: 7392171840115967522
         ChildIds: 1330390854846111261
@@ -28,7 +27,7 @@ Assets {
           }
           Overrides {
             Name: "cs:simulatePhysicsBall"
-            Bool: false
+            Bool: true
           }
           Overrides {
             Name: "cs:CVSSoccerBall"
@@ -84,39 +83,6 @@ Assets {
         Folder {
           IsFilePartition: true
           FilePartitionName: "CVS main control"
-        }
-      }
-      Objects {
-        Id: 6258449495290854081
-        Name: "README"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 5443814977555669771
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 13552342609256095649
-          }
         }
       }
       Objects {

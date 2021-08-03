@@ -1,13 +1,13 @@
 Assets {
-  Id: 11973703339291775941
-  Name: "CVS Soccer equip"
+  Id: 10761585017553610560
+  Name: "CVS Soccer equip 2"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 16401043384679813958
+      RootId: 9911566841174938746
       Objects {
-        Id: 16401043384679813958
-        Name: "CVS Soccer equip"
+        Id: 9911566841174938746
+        Name: "CVS Soccer equip 2"
         Transform {
           Scale {
             X: 1
@@ -16,12 +16,13 @@ Assets {
           }
         }
         ParentId: 4781671109827199097
-        ChildIds: 10041703835105011597
-        ChildIds: 4371732110621813514
-        ChildIds: 7718894334649025434
-        ChildIds: 3828502155009149990
-        ChildIds: 12900612877445824622
-        ChildIds: 18392585474569060532
+        ChildIds: 18251943497810285667
+        ChildIds: 16635359497457739766
+        ChildIds: 15799420760103393918
+        ChildIds: 12868694312871483575
+        ChildIds: 10207092026757175053
+        ChildIds: 2282655768747877610
+        ChildIds: 6966123497219723151
         UnregisteredParameters {
           Overrides {
             Name: "cs:pass_Radius"
@@ -29,15 +30,15 @@ Assets {
           }
           Overrides {
             Name: "cs:baseForceShoot"
-            Float: 5000
+            Float: 8000
           }
           Overrides {
             Name: "cs:defaultZAngle"
-            Float: 40
+            Float: 45
           }
           Overrides {
             Name: "cs:speedPassAbility"
-            Float: 1500
+            Float: 2000
           }
           Overrides {
             Name: "cs:isVelocityK"
@@ -75,7 +76,7 @@ Assets {
           Overrides {
             Name: "cs:ndb_Trigg"
             ObjectReference {
-              SubObjectId: 1625075445606608531
+              SubObjectId: 8291835914106489537
             }
           }
           Overrides {
@@ -186,7 +187,7 @@ Assets {
         }
       }
       Objects {
-        Id: 10041703835105011597
+        Id: 18251943497810285667
         Name: "Kick"
         Transform {
           Location {
@@ -199,7 +200,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16401043384679813958
+        ParentId: 9911566841174938746
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -262,7 +263,7 @@ Assets {
         }
       }
       Objects {
-        Id: 4371732110621813514
+        Id: 16635359497457739766
         Name: "Pass"
         Transform {
           Location {
@@ -275,7 +276,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16401043384679813958
+        ParentId: 9911566841174938746
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -338,7 +339,46 @@ Assets {
         }
       }
       Objects {
-        Id: 7718894334649025434
+        Id: 15799420760103393918
+        Name: "Pickup Trigger"
+        Transform {
+          Location {
+            X: 67.9154663
+            Z: 66.4126434
+          }
+          Rotation {
+          }
+          Scale {
+            X: 2.22287631
+            Y: 1.30066407
+            Z: 1.67228174
+          }
+        }
+        ParentId: 9911566841174938746
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Trigger {
+          Interactable: true
+          InteractionLabel: "Equip Soccer Equipment 2"
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:box"
+          }
+        }
+      }
+      Objects {
+        Id: 12868694312871483575
         Name: "CVS shoot ball"
         Transform {
           Location {
@@ -351,12 +391,12 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16401043384679813958
+        ParentId: 9911566841174938746
         UnregisteredParameters {
           Overrides {
             Name: "cs:shape"
             ObjectReference {
-              SubObjectId: 8203898171945882562
+              SubObjectId: 15756345189898109849
             }
           }
         }
@@ -380,7 +420,7 @@ Assets {
         }
       }
       Objects {
-        Id: 3828502155009149990
+        Id: 10207092026757175053
         Name: "ServerContext"
         Transform {
           Location {
@@ -393,8 +433,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16401043384679813958
-        ChildIds: 17216924272719951893
+        ParentId: 9911566841174938746
+        ChildIds: 4858373633039595507
+        ChildIds: 2658003509588497754
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -413,7 +454,7 @@ Assets {
         }
       }
       Objects {
-        Id: 17216924272719951893
+        Id: 4858373633039595507
         Name: "CVS_nearDetectingBall"
         Transform {
           Location {
@@ -429,18 +470,18 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 3828502155009149990
+        ParentId: 10207092026757175053
         UnregisteredParameters {
           Overrides {
             Name: "cs:ndbTrigg"
             ObjectReference {
-              SubObjectId: 1625075445606608531
+              SubObjectId: 8291835914106489537
             }
           }
           Overrides {
             Name: "cs:shapeControl"
             ObjectReference {
-              SubObjectId: 8203898171945882562
+              SubObjectId: 15756345189898109849
             }
           }
         }
@@ -463,7 +504,48 @@ Assets {
         }
       }
       Objects {
-        Id: 12900612877445824622
+        Id: 2658003509588497754
+        Name: "CVS EquipmentPickupServer"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10207092026757175053
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Trigger"
+            ObjectReference {
+              SubObjectId: 15799420760103393918
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 8459825612529451237
+          }
+        }
+      }
+      Objects {
+        Id: 2282655768747877610
         Name: "ClientContext"
         Transform {
           Location {
@@ -482,9 +564,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 16401043384679813958
-        ChildIds: 13883162493711205186
-        ChildIds: 13754294136757573350
+        ParentId: 9911566841174938746
+        ChildIds: 10906187594922776654
+        ChildIds: 2486702468243304161
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -502,7 +584,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13883162493711205186
+        Id: 10906187594922776654
         Name: "CVS_kickBar_client"
         Transform {
           Location {
@@ -515,26 +597,26 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12900612877445824622
+        ParentId: 2282655768747877610
         UnregisteredParameters {
           Overrides {
             Name: "cs:Kick_Ab"
             ObjectReference {
-              SubObjectId: 10041703835105011597
+              SubObjectId: 18251943497810285667
             }
           }
           Overrides {
             Name: "cs:Pass_Ab"
             ObjectReference {
-              SubObjectId: 4371732110621813514
+              SubObjectId: 16635359497457739766
             }
           }
           Overrides {
             Name: "cs:UI_near_players"
             ObjectReference {
-              SelfId: 7739512607019363431
+              SelfId: 8785257638144355994
               SubObjectId: 15000265551684260509
-              InstanceId: 13592073659497046974
+              InstanceId: 17098756045108422477
               TemplateId: 3974301444724926198
             }
           }
@@ -558,8 +640,8 @@ Assets {
         }
       }
       Objects {
-        Id: 13754294136757573350
-        Name: "Ball - Soccer 01"
+        Id: 2486702468243304161
+        Name: "simSoccerBall"
         Transform {
           Location {
             Z: -19.8447266
@@ -572,8 +654,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12900612877445824622
-        ChildIds: 2274331723213705198
+        ParentId: 2282655768747877610
+        ChildIds: 18349956606669070536
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -603,7 +685,7 @@ Assets {
         }
       }
       Objects {
-        Id: 2274331723213705198
+        Id: 18349956606669070536
         Name: "CVS ballSimulator"
         Transform {
           Location {
@@ -616,7 +698,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 13754294136757573350
+        ParentId: 2486702468243304161
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -636,13 +718,13 @@ Assets {
         }
       }
       Objects {
-        Id: 18392585474569060532
+        Id: 6966123497219723151
         Name: "addon"
         Transform {
           Location {
-            X: 137.492981
-            Y: 7.85118866
-            Z: 63.5872803
+            X: 147.496826
+            Y: 7.85119629
+            Z: 54.2314911
           }
           Rotation {
             Pitch: -5.54351807
@@ -655,9 +737,9 @@ Assets {
             Z: 1.42017257
           }
         }
-        ParentId: 16401043384679813958
-        ChildIds: 8203898171945882562
-        ChildIds: 16978678271621866040
+        ParentId: 9911566841174938746
+        ChildIds: 15756345189898109849
+        ChildIds: 7789424354433188076
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -676,7 +758,7 @@ Assets {
         }
       }
       Objects {
-        Id: 8203898171945882562
+        Id: 15756345189898109849
         Name: "shape"
         Transform {
           Location {
@@ -692,9 +774,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 18392585474569060532
-        ChildIds: 9595962949919127373
-        ChildIds: 17656180993450044670
+        ParentId: 6966123497219723151
+        ChildIds: 5462508426250047346
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -713,26 +794,26 @@ Assets {
         }
       }
       Objects {
-        Id: 9595962949919127373
-        Name: "Ring - Quarter"
+        Id: 5462508426250047346
+        Name: "half sphere"
         Transform {
           Location {
-            X: -4.17293739
-            Y: -1.01635885
-            Z: 2.59333706
+            X: -6.33895159
+            Y: -13.9522572
+            Z: -25.4160252
           }
           Rotation {
-            Pitch: -0.202030152
-            Yaw: 8.52459049
-            Roll: 2.71764278
+            Pitch: -2.75762939
+            Yaw: 86.4065475
+            Roll: -73.4950562
           }
           Scale {
-            X: 1.02222085
-            Y: 0.481045455
-            Z: 6.57022285
+            X: 1.36963773
+            Y: 1.36963773
+            Z: 1.36963773
           }
         }
-        ParentId: 8203898171945882562
+        ParentId: 15756345189898109849
         UnregisteredParameters {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
@@ -744,6 +825,7 @@ Assets {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
               R: 0.960000038
+              B: 0.896423519
               A: 1
             }
           }
@@ -763,7 +845,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 808408539445127481
+            Id: 8776376149539594602
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -779,72 +861,7 @@ Assets {
         }
       }
       Objects {
-        Id: 17656180993450044670
-        Name: "Ring - Quarter"
-        Transform {
-          Location {
-            X: 4.17290401
-            Y: 1.01633108
-            Z: 2.66959596
-          }
-          Rotation {
-            Yaw: 89.9813919
-            Roll: -1.50902764e-07
-          }
-          Scale {
-            X: 0.537402
-            Y: 0.82826966
-            Z: 6.57022285
-          }
-        }
-        ParentId: 8203898171945882562
-        UnregisteredParameters {
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:id"
-            AssetReference {
-              Id: 10347500372684654618
-            }
-          }
-          Overrides {
-            Name: "ma:Shared_BaseMaterial:color"
-            Color {
-              R: 0.960000038
-              A: 1
-            }
-          }
-        }
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        CoreMesh {
-          MeshAsset {
-            Id: 808408539445127481
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
-          }
-        }
-      }
-      Objects {
-        Id: 16978678271621866040
+        Id: 7789424354433188076
         Name: "StaticContext"
         Transform {
           Location {
@@ -860,9 +877,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 18392585474569060532
-        ChildIds: 11647636081282623444
-        ChildIds: 1625075445606608531
+        ParentId: 6966123497219723151
+        ChildIds: 14152959239972109482
+        ChildIds: 8291835914106489537
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -881,7 +898,7 @@ Assets {
         }
       }
       Objects {
-        Id: 11647636081282623444
+        Id: 14152959239972109482
         Name: "ref"
         Transform {
           Location {
@@ -900,7 +917,7 @@ Assets {
             Z: 1.12124944
           }
         }
-        ParentId: 16978678271621866040
+        ParentId: 7789424354433188076
         UnregisteredParameters {
           Overrides {
             Name: "bp:Corner Rounding"
@@ -959,7 +976,7 @@ Assets {
         }
       }
       Objects {
-        Id: 1625075445606608531
+        Id: 8291835914106489537
         Name: "ndb"
         Transform {
           Location {
@@ -978,7 +995,7 @@ Assets {
             Z: 0.708324432
           }
         }
-        ParentId: 16978678271621866040
+        ParentId: 7789424354433188076
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1012,12 +1029,12 @@ Assets {
       }
     }
     Assets {
-      Id: 808408539445127481
-      Name: "Ring - Quarter"
+      Id: 8776376149539594602
+      Name: "Sphere - Half"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_quarter_torus_002"
+        AssetId: "sm_hemisphere_001"
       }
     }
     Assets {
@@ -1044,5 +1061,4 @@ Assets {
     }
   }
   SerializationVersion: 94
-  DirectlyPublished: true
 }

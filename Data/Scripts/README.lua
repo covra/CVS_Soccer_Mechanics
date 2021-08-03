@@ -1,4 +1,48 @@
 --[[
+	INSTRUCTIONS
+	-----------
+
+	1.Add the 'CVS main control' template to hierarchy.
+	2.Customize parammeters
+	3.If you wish, add extra-assets:
+		- Goals
+		- Score Board
+		- Training items (cones and player barrier)
+	4.By default, the system auto equip the default equipment to all joining players.
+	  You can modify this in the custom properties and can create more and differents equipments (different shapes, angles or power) and add them manually (or put them in the field and player take them)	
+		
+	ABILITIES
+	--------
+	
+	1.Long pass
+       1.1 Press and hold LMB to increase shoot power, and move the camera to aim
+       1.2 Release LMB to kick the ball
+	2.Directed Pass
+       2.1 Press and hold RMB to search near team players
+       2.2 If players found in radius will be shown at UI with a index number
+       2.3 Press (while holding RMB) index number of near team player (will be enlighted in blue)
+       2.4 Release RMB (keep the ball at your feets)     
+       
+  Press (by default) 'N' key to add a soccer ball at player's feet	
+  
+	EXAMPLE GAME	
+	------------
+	https://www.coregames.com/games/e4a3c2/testsoccer	
+	
+	post in coreForums: 
+	https://forums.coregames.com/t/sports-ball-system-cvs-soccer-system/1816
+		
+	LOG
+	---
+
+ - Fixed: Now abilities work well, fixed broken UI reference
+ - Fixed: Now when simulating using 'core physics sphere' virtual ball is not seen
+ - Fixed: Some minor bugs
+ - Added: extra information in README file
+ - Added: In example game , 2 new equipment with different parammeters for better clearence
+ - Modify: README file now is a standalone file	
+		
+		
 										The 'CVS Main Control'
 										----------------------
 	User exposed properties:
@@ -78,7 +122,6 @@
 	ScoreBoards
 	------------
 		- Simple scoreBoards. They need to know the name of the goal event. By default is the same that the goals
-
 
 
 
