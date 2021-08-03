@@ -33,6 +33,7 @@ Objects {
   ChildIds: 11957221845899353369
   ChildIds: 5688698067469258933
   ChildIds: 4636434086164117965
+  ChildIds: 6267621207345444772
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -45,6 +46,47 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 6267621207345444772
+  Name: "CVS soccer ball"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 71933976809444979
+      value {
+        Overrides {
+          Name: "Name"
+          String: "CVS soccer ball"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -119.659897
+            Y: -61.2810516
+            Z: 49.503891
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 7723962630712344272
+    }
   }
 }
 Objects {

@@ -10,6 +10,9 @@
 		- Training items (cones and player barrier)
 	4.By default, the system auto equip the default equipment to all joining players.
 	  You can modify this in the custom properties and can create more and differents equipments (different shapes, angles or power) and add them manually (or put them in the field and player take them)	
+	5.By default, the system  uses the 'core physics sphere' with the name 'CVS soccer ball'.
+		If you wish a more arcade-like game, just uncheck the 'simulatePhysicsBall', then on the driving ball
+		situations, the ball will be automatic on the player's feet.
 		
 	ABILITIES
 	--------
@@ -43,6 +46,8 @@
  - Added: extra information in README file
  - Added: In example game , 2 new equipment with different parammeters for better clearence
  - Modify: README file now is a standalone file	
+ 
+ - Added: Ball Dumping in goal nets ( 1/3 velocity)
 		
 		
 										The 'CVS Main Control'

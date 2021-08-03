@@ -73,7 +73,7 @@ Assets {
     Id: "17147d10e08b49f0ae34b7fb846d1f92"
     OwnerAccountId: "2806d3a81a1945d98531567cd86090ac"
     OwnerName: "covra"
-    Description: "UPDATED! \r\n\r\nPlease REPLACE old \'CVS Soccer System\'! Added new templates!\r\n\r\nThis is a complete soccer system to add to a soccer game or a soccer-like game. Include:\r\n-Main control\r\n-Equipment\r\n-Extra Assets ( physics ball, goals, training items, and score boards)\r\n\r\nIf you need this in EsPa\303\221ol! dimelo!\r\n\r\nBy CVS - CoVrA 2021    ;)"
+    Description: "UPDATED! \r\n\r\nPlease REPLACE old \'CVS Soccer System\'! Added new templates! if warning message >> Accept!\r\n\r\nThis is a complete soccer system to add to a soccer game or a soccer-like game. Include:\r\n-Main control\r\n-Equipment\r\n-Extra Assets ( physics ball, goals, training items, and score boards)\r\n\r\nIf you need this in EsPa\303\221ol! dimelo!\r\n\r\nBy CVS - CoVrA 2021    ;)"
   }
   SerializationVersion: 94
 }

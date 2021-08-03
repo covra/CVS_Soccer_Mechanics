@@ -7,6 +7,9 @@ local GOAL_TRIGGER = ROOT:GetCustomProperty("goalTrigger"):WaitForObject()
 
 function OnBeginOverlap(trigg, other)
 	if other.name == BALL_NAME then 
+		local ballVelocity = other:GetVelocity()
+		ballVelocity = ballVelocity / 3
+		other:SetVelocity(ballVelocity)
 		Events.Broadcast(GOAL_EVENT_NAME, TEAM)
 		Task.Wait()	
 	end

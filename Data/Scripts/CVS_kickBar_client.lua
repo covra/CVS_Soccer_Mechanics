@@ -69,7 +69,7 @@ function OnBindingPressed(player, binding)
 		player.clientUserData.passSphere = World.SpawnAsset(PASS_SPHERE,{position = pos, scale = scaleSphere })
 		showUIteamPlayers(nearPlayers, player)
 	--PASS ABILITY player selection
-	elseif player.clientUserData.passState == "show" and player == SOCCER_CONTROL_EQ.owner then 
+	elseif player.clientUserData.passState == "show"  and Object.IsValid(SOCCER_CONTROL_EQ) and player == SOCCER_CONTROL_EQ.owner then 
 		local stringSub1 = string.sub (binding,15,15)
 		local stringSub2 = string.sub(binding,16,16)
 		if stringSub1 == "1" or stringSub1 == "2" or stringSub1 == "3" or stringSub1 == "4" or
@@ -114,7 +114,7 @@ function OnBindingReleased(player, binding)
 		powerKick = 0
 		KICK_BAR.progress = powerKick	
 	--PASS ABILITY released
-	elseif (binding == KEY_PASS_BALL) and player == SOCCER_CONTROL_EQ.owner then 
+	elseif (binding == KEY_PASS_BALL)  and Object.IsValid(SOCCER_CONTROL_EQ) and player == SOCCER_CONTROL_EQ.owner then 
 		if Object.IsValid(player.clientUserData.passSphere) then player.clientUserData.passSphere:Destroy() end
 		if player.clientUserData.passState == "selected" then 
 			PASS_ABILITY:Activate()

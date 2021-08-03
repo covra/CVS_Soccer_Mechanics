@@ -95,7 +95,7 @@ function onKickPower (player,isKick, data_1, data_2)
 				end
 			--PASS ABILITY
 			elseif not isKick then 
-				if Object.IsValid(player.serverUserData.ball) then
+				--if Object.IsValid(player.serverUserData.ball) then
 					local nearPlayer = data_1
 					if Object.IsValid (nearPlayer) then 								
 						local pos = nearPlayer:GetWorldPosition()
@@ -108,13 +108,27 @@ function onKickPower (player,isKick, data_1, data_2)
 							local timePass = TIME_CTE
 							V_PASS = moduleDist / timePass
 						end 
-						local shootVector = vDif * V_PASS						
+						local shootVector = vDif * V_PASS	
+						if not SIM_PHYSICS_BALL then 
+							NDB_TRIGGER.serverUserData.forceEnabled = false
+							player.serverUserData.ball = World.SpawnAsset(SOCCER_BALL,{position = NDB_TRIGGER:GetWorldPosition() })
+							_G.ownerBall = nil
+							Task.Spawn(function()
+								Events.BroadcastToAllPlayers("ballOwner",_G.ownerBall)
+								Task.Wait()
+							end) 
+							Task.Spawn(function()
+								NDB_TRIGGER.serverUserData.forceEnabled = true
+								SOCCER_CONTROL_EQ.owner.serverUserData.ball = nil 
+							end, 1)
+						end
+								--print(">>>>>>>>>>>>>>>>>>>>>>>>>player.serverUserData.ball: ",player.serverUserData.ball)
 						player.serverUserData.ball:SetVelocity(shootVector)
 						if debugPrint then print(script.name.." >> NearPlayer:"..nearPlayer.name.. " dist= "..tostring(moduleDist).." timePass= "..tostring(timePass).." velocity:",shootVector) end
 					else 
 						UI.PrintToScreen(">> Player to pass, no longer valid", Color.RED)
 					end 
-				end
+				--end
 			end 
 		end 
 	end 
